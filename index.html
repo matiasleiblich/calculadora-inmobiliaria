@@ -165,7 +165,7 @@
     }
 
     .hero-img {
-      width: 220px;
+      width: 320px;
       opacity: .95;
     }
     @media (max-width: 640px) {
@@ -381,7 +381,7 @@
       display: none;
       position: absolute;
       right: 0; top: calc(100% + 6px);
-      width: 220px;
+      width: 320px;
       background: var(--text);
       color: #fff;
       font-size: 12px;
@@ -750,31 +750,10 @@ function mostrarVenta(){
     juris = j;
     setActive('btn-caba', j === 'caba');
     setActive('btn-pba',  j === 'pba');
-    const fp = document.getElementById('field-primera');
-    if (j === 'pba') {
-      fp.style.display = 'none';
-      document.getElementById('exencion-info').style.display = 'none';
-    } else {
-      actualizarExencion();
-    }
+    actualizarExencion();
   }
 
-  function setTipo(t) {
-    tipo = t;
-    setActive('btn-vivienda', t === 'vivienda');
-    setActive('btn-inversion', t === 'inversion');
-    const fp = document.getElementById('field-primera');
-    if (t === 'inversion') {
-      fp.style.display = 'none';
-      primera = false;
-      document.getElementById('exencion-info').style.display = 'none';
-    } else {
-      fp.style.display = '';
-      primera = true;
-      setPrimera(true);
-      actualizarExencion();
-    }
-  }
+  function setTipo(t) {}
 
   function setPrimera(v) {
     primera = v;
@@ -790,7 +769,7 @@ function mostrarVenta(){
 
   function actualizarExencion() {
     const box = document.getElementById('exencion-info');
-    if (juris === 'caba' && tipo === 'vivienda') {
+    if (juris === 'caba') {
       const dolar = parseNum('inp-dolar') || 1480;
       const lim = Math.round(226100000 / dolar);
       document.getElementById('exencion-txt').textContent =
@@ -825,7 +804,7 @@ function mostrarVenta(){
       pct_sellos = '2% · Provincia de Buenos Aires';
       sellos_desc = 'Impuesto que grava la transferencia de inmuebles en la Provincia de Buenos Aires.';
     } else {
-      if (primera && tipo === 'vivienda') {
+      if (primera) {
         if (valPesos <= LIMITE) {
           sellos = 0;
           sellos_exento = true;
