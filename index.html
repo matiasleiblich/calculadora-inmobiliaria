@@ -132,43 +132,38 @@
       margin-bottom: .5rem;
     }
     .hero p {
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-  flex-wrap: wrap;
-}
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 420px;
+    }
 
-.hero-btn {
-  height: 46px;
-  padding: 0 24px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all .15s;
-}
+    .hero-actions {
+      display:flex;
+      gap:12px;
+      margin-top:24px;
+      flex-wrap:wrap;
+    }
+    .hero-btn{
+      height:46px;
+      padding:0 24px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
+      font-size:14px;
+      font-weight:600;
+    }
+    .hero-btn-primary{
+      background:var(--blue);
+      color:#fff;
+    }
+    .hero-btn-secondary{
+      background:#fff;
+      color:var(--blue);
+      border:1px solid var(--blue);
+    }
 
-.hero-btn-primary {
-  background: var(--blue);
-  color: white;
-}
-
-.hero-btn-primary:hover {
-  background: #1249a0;
-}
-
-.hero-btn-secondary {
-  background: white;
-  color: var(--blue);
-  border: 1px solid var(--blue);
-}
-
-.hero-btn-secondary:hover {
-  background: var(--blue-light);
-}
     .hero-img {
       width: 160px;
       opacity: .12;
@@ -527,25 +522,15 @@
   <!-- Hero -->
   <div class="hero">
     <div>
-<div class="hero-badge">
-  <i class="ti ti-calculator"></i> Herramienta profesional
-</div>
-
-<h1>CALCULADORA INMOBILIARIA</h1>
-
-<p>
-  Calculá los gastos a la hora de comprar o vender una propiedad.
-</p>
-
-<div class="hero-actions">
-  <button class="hero-btn hero-btn-primary" onclick="mostrarCompra()">
-    COMPRAR
-  </button>
-
-  <button class="hero-btn hero-btn-secondary" onclick="mostrarVenta()">
-    VENDER
-  </button>
-</div>
+      <div class="hero-badge">
+        <i class="ti ti-calculator"></i> Herramienta profesional
+      </div>
+      <h1>CALCULADORA INMOBILIARIA</h1>
+      <p>Calculá los gastos a la hora de...</p>
+      <div class="hero-actions">
+        <button class="hero-btn hero-btn-primary" onclick="mostrarCompra()">COMPRAR</button>
+        <button class="hero-btn hero-btn-secondary" onclick="mostrarVenta()">VENDER</button>
+      </div>
     </div>
     <!-- Placeholder SVG house illustration -->
     <svg class="hero-img" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -559,7 +544,7 @@
   </div>
 
   <!-- Main calculator card -->
-  <div class="main-card">
+  <div class="main-card" id="compra-section" style="display:none;">
     <div class="card-grid">
 
       <!-- Left: form -->
@@ -660,6 +645,16 @@
     </div>
   </div>
 
+
+  <div id="venta-section" class="main-card" style="display:none;">
+    <div style="padding:40px;text-align:center;">
+      <h2>Calculadora de Venta</h2>
+      <p style="margin-top:10px;">Próximamente disponible.</p>
+      <p style="margin-top:10px;">Estamos desarrollando esta herramienta para estimar los costos asociados a la venta de una propiedad.</p>
+    </div>
+  </div>
+
+
   <!-- CTA cards -->
   <div class="below">
     <div class="cta-card">
@@ -728,6 +723,20 @@
 </footer>
 
 <script>
+
+function mostrarCompra(){
+  document.getElementById('compra-section').style.display='block';
+  document.getElementById('venta-section').style.display='none';
+  document.getElementById('compra-section').scrollIntoView({behavior:'smooth'});
+}
+
+function mostrarVenta(){
+  document.getElementById('venta-section').style.display='block';
+  document.getElementById('compra-section').style.display='none';
+  document.getElementById('venta-section').scrollIntoView({behavior:'smooth'});
+}
+
+
   /* ── Estado ── */
   let juris = 'caba';
   let tipo  = 'vivienda';
@@ -931,15 +940,7 @@
       </div>
     `;
   }
-function mostrarCompra() {
-  document.querySelector('.main-card').scrollIntoView({
-    behavior: 'smooth'
-  });
-}
 
-function mostrarVenta() {
-  alert('Calculadora de venta - Próximamente disponible');
-}
   /* ── Init ── */
   actualizarExencion();
 </script>
