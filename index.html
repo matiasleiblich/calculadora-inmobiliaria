@@ -503,11 +503,7 @@
 <!-- ── Navbar ── -->
 <nav>
   <a class="nav-logo" href="#">
-    <div class="logo-icon">IN²</div>
-    <div class="logo-text">
-      <strong>Ingenieros Inmobiliarios</strong>
-      <span>Herramientas profesionales</span>
-    </div>
+    <img src="Logo IN2.png" alt="Ingenieros Inmobiliarios" style="height:42px;">
   </a>
   <ul class="nav-links">
     <li><a href="#" class="active">Herramientas</a></li>
@@ -526,21 +522,13 @@
         <i class="ti ti-calculator"></i> Herramienta profesional
       </div>
       <h1>CALCULADORA INMOBILIARIA</h1>
-      <p>Calculá los gastos a la hora de...</p>
+      <p>Conocé cuánto necesitás para comprar o cuánto recibirás al vender una propiedad.</p>
       <div class="hero-actions">
         <button class="hero-btn hero-btn-primary" onclick="mostrarCompra()">COMPRAR</button>
         <button class="hero-btn hero-btn-secondary" onclick="mostrarVenta()">VENDER</button>
       </div>
     </div>
-    <!-- Placeholder SVG house illustration -->
-    <svg class="hero-img" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="30" y="70" width="100" height="60" rx="4" fill="#1558A8"/>
-      <polygon points="20,72 80,20 140,72" fill="#1558A8"/>
-      <rect x="55" y="90" width="22" height="40" rx="3" fill="#F5F7FA"/>
-      <rect x="90" y="90" width="26" height="26" rx="3" fill="#F5F7FA"/>
-      <rect x="70" y="10" width="8" height="24" fill="#1558A8"/>
-      <rect x="66" y="6" width="16" height="8" rx="2" fill="#1558A8"/>
-    </svg>
+    <img class="hero-img" src="Dibujo Casa.jpeg" alt="Arquitectura">
   </div>
 
   <!-- Main calculator card -->
@@ -583,17 +571,7 @@
           </div>
         </div>
 
-        <div class="field" id="field-tipo">
-          <label>Tipo de operación</label>
-          <div class="toggle-group">
-            <button class="tgl on" id="btn-vivienda" onclick="setTipo('vivienda')">
-              <i class="ti ti-home"></i> Vivienda
-            </button>
-            <button class="tgl" id="btn-inversion" onclick="setTipo('inversion')">
-              <i class="ti ti-chart-line"></i> Inversión
-            </button>
-          </div>
-        </div>
+        
 
         <div class="field" id="field-primera">
           <label>¿Es tu primera vivienda?</label>
@@ -739,8 +717,7 @@ function mostrarVenta(){
 
   /* ── Estado ── */
   let juris = 'caba';
-  let tipo  = 'vivienda';
-  let primera = true;
+    let primera = true;
 
   /* ── Formateo de inputs ── */
   function parseNum(id) {
@@ -767,12 +744,10 @@ function mostrarVenta(){
     setActive('btn-caba', j === 'caba');
     setActive('btn-pba',  j === 'pba');
     const fp = document.getElementById('field-primera');
-    const ft = document.getElementById('field-tipo');
     if (j === 'pba') {
       fp.style.display = 'none';
       document.getElementById('exencion-info').style.display = 'none';
     } else {
-      if (tipo === 'vivienda') fp.style.display = '';
       actualizarExencion();
     }
   }
