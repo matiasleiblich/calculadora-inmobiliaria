@@ -165,8 +165,8 @@
     }
 
     .hero-img {
-      width: 160px;
-      opacity: .12;
+      width: 220px;
+      opacity: .95;
     }
     @media (max-width: 640px) {
       .hero { grid-template-columns: 1fr; }
@@ -524,9 +524,16 @@
       <h1>CALCULADORA INMOBILIARIA</h1>
       <p>Conocé cuánto necesitás para comprar o cuánto recibirás al vender una propiedad.</p>
       <div class="hero-actions">
-        <button class="hero-btn hero-btn-primary" onclick="mostrarCompra()">COMPRAR</button>
-        <button class="hero-btn hero-btn-secondary" onclick="mostrarVenta()">VENDER</button>
+        <div class="hero-btn hero-btn-primary" onclick="mostrarCompra()" style="height:auto;padding:18px;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:18px;">🏠 COMPRAR</div>
+          <div style="font-size:12px;font-weight:500;opacity:.9;">Estimá los gastos</div>
+        </div>
+        <div class="hero-btn hero-btn-secondary" onclick="mostrarVenta()" style="height:auto;padding:18px;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:18px;">💰 VENDER</div>
+          <div style="font-size:12px;font-weight:500;">Estimá el Neto</div>
+        </div>
       </div>
+      <div style="margin-top:12px;color:#6B7280;font-size:13px;">Herramientas desarrolladas por Ingenieros Inmobiliarios</div>
     </div>
     <img class="hero-img" src="Dibujo Casa.jpeg" alt="Arquitectura">
   </div>
@@ -566,7 +573,7 @@
               <i class="ti ti-building"></i> CABA
             </button>
             <button class="tgl" id="btn-pba" onclick="setJuris('pba')">
-              <i class="ti ti-map-pin"></i> Prov. de Buenos Aires
+              <i class="ti ti-map-pin"></i> Provincia
             </button>
           </div>
         </div>
@@ -580,7 +587,7 @@
               <i class="ti ti-circle-check"></i> Sí
             </button>
             <button class="tgl" id="btn-no" onclick="setPrimera(false)">
-              No
+              <i class="ti ti-circle-x"></i> No
             </button>
           </div>
         </div>
