@@ -631,11 +631,54 @@
   </div>
 
 
+  
   <div id="venta-section" class="main-card" style="display:none;">
-    <div style="padding:40px;text-align:center;">
-      <h2>Calculadora de Venta</h2>
-      <p style="margin-top:10px;">Próximamente disponible.</p>
-      <p style="margin-top:10px;">Estamos desarrollando esta herramienta para estimar los costos asociados a la venta de una propiedad.</p>
+    <div class="card-grid">
+      <div class="form-side">
+        <div class="side-title">
+          <i class="ti ti-home-dollar"></i>
+          Datos de la venta
+        </div>
+
+        <div class="field">
+          <label for="venta-valor">Valor de venta</label>
+          <div class="input-wrap">
+            <span class="input-prefix">USD</span>
+            <input type="text" id="venta-valor" placeholder="150.000" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="venta-dolar">Cotización del dólar</label>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="text" id="venta-dolar" value="1480" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Ubicación del inmueble</label>
+          <div class="toggle-group">
+            <button class="tgl on" id="v-caba" onclick="setVentaJuris('caba')">CABA</button>
+            <button class="tgl" id="v-pba" onclick="setVentaJuris('pba')">Provincia</button>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calcularVenta()">
+          <i class="ti ti-calculator"></i>
+          CALCULAR NETO
+        </button>
+      </div>
+
+      <div class="result-side">
+        <div class="side-title"><i class="ti ti-currency-dollar"></i> Resultado estimado</div>
+        <div id="venta-result">
+          <div class="result-empty">
+            <i class="ti ti-home-dollar"></i>
+            <p>Completá los datos y presioná <strong>Calcular Neto</strong>.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -856,7 +899,7 @@ function mostrarVenta(){
         desc: 'Incluye certificados, informes registrales, tasas y gastos administrativos.'
       },
       {
-        icon: 'ti-handshake',
+        icon: 'ti-users',
         name: 'Honorarios inmobiliarios',
         sub: `${pct_com * 100}% del valor de compra`,
         amount: comision,
@@ -902,7 +945,48 @@ function mostrarVenta(){
     `;
   }
 
-  /* ── Init ── */
+  
+let ventaJuris='caba';
+
+function setVentaJuris(j){
+ ventaJuris=j;
+ document.getElementById('v-caba').className=j==='caba'?'tgl on':'tgl';
+ document.getElementById('v-pba').className=j==='pba'?'tgl on':'tgl';
+}
+
+function calcularVenta(){
+ const valor=parseFloat((document.getElementById('venta-valor').value||'0').replace(/\./g,''))||0;
+ const dolar=parseFloat((document.getElementById('venta-dolar').value||'1480').replace(/\./g,''))||1480;
+
+ if(!valor){return;}
+
+ const comision=valor*0.03;
+ const pre=valor*0.02;
+
+ let sellos=0;
+ let nota='* Habitualmente lo abona el comprador.';
+ let tip='El impuesto corresponde al 2% del valor de venta. En la Provincia de Buenos Aires el impuesto suele estar a cargo del comprador, aunque las partes pueden pactar una distribución diferente.';
+
+ if(ventaJuris==='caba'){
+   const pesos=valor*dolar;
+   sellos=valor*(pesos<=226100000?0.0135:0.0175);
+   nota='* Se considera que el comprador posee otra propiedad en CABA.';
+   tip='Se estima la parte correspondiente al vendedor. Si el comprador adquiere su primera vivienda y se encuentra dentro del límite de exención vigente, este importe podría reducirse o resultar exento.';
+ }
+
+ const gastos=comision+pre+sellos;
+ const neto=valor-gastos;
+
+ document.getElementById('venta-result').innerHTML=`
+ <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-building-estate"></i></div><div><div class="line-name">Impuesto de sellos*</div><div class="line-sub">${nota}</div></div></div><div class="line-r"><span class="line-amount">USD ${Math.round(sellos).toLocaleString('es-AR')}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">${tip}</div></div></div></div>
+ <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-users"></i></div><div><div class="line-name">Honorarios inmobiliarios</div><div class="line-sub">3% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">USD ${Math.round(comision).toLocaleString('es-AR')}</span></div></div>
+ <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-file-text"></i></div><div><div class="line-name">Gastos preescriturarios</div><div class="line-sub">2% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">USD ${Math.round(pre).toLocaleString('es-AR')}</span></div></div>
+ <hr class="sep"/>
+ <div class="total-row"><span class="total-label">TOTAL DE GASTOS</span><span class="total-num">USD ${Math.round(gastos).toLocaleString('es-AR')}</span></div>
+ <div class="grand"><div><div class="grand-label">NETO ESTIMADO A RECIBIR</div><div class="grand-sub">Valor de venta - gastos estimados</div></div><div class="grand-num">USD ${Math.round(neto).toLocaleString('es-AR')}</div></div>`;
+}
+
+/* ── Init ── */
   actualizarExencion();
 </script>
 </body>
