@@ -788,25 +788,11 @@ function actualizarCTA(tipo){
  }
 }
 
-function actualizarGuia(tipo){
- const titulo=document.getElementById('guia-titulo');
- const texto=document.getElementById('guia-texto');
- const link=document.getElementById('guia-link');
- if(tipo==='venta'){
-   titulo.textContent='Guía del Vendedor';
-   texto.textContent='Conocé el proceso de venta, los gastos habituales y recomendaciones para vender mejor tu propiedad.';
-   link.href='https://drive.google.com/drive/folders/1DYPBVyH8lfU9-IVbrGHSU9lL-UJ0C8b1?usp=sharing';
- }else{
-   titulo.textContent='Guía del Comprador';
-   texto.textContent='Conocé el paso a paso de una operación inmobiliaria, los gastos habituales y los errores más frecuentes al comprar.';
-   link.href='https://drive.google.com/drive/folders/1MR1OyjK6j6co7eUpYFF5u6T9P5RiZ1CR?usp=sharing';
- }
-}
+
 
 function mostrarCompra(){
   document.getElementById('compra-section').style.display='block';
   document.getElementById('venta-section').style.display='none';
-  actualizarGuia('compra');
   actualizarCTA('compra');
   document.getElementById('compra-section').scrollIntoView({behavior:'smooth'});
 }
@@ -814,7 +800,6 @@ function mostrarCompra(){
 function mostrarVenta(){
   document.getElementById('venta-section').style.display='block';
   document.getElementById('compra-section').style.display='none';
-  actualizarGuia('venta');
   actualizarCTA('venta');
   document.getElementById('venta-section').scrollIntoView({behavior:'smooth'});
 }
