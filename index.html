@@ -3,34 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora Inmobiliaria | Gastos Compra y Venta</title>
+  <title>Calculadora Inmobiliaria | Matías Leiblich</title>
   <meta name="description" content="Calculá los gastos a la hora de comprar y vender una propiedad en Argentina. CABA y Provincia de Buenos Aires." />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://matiasleiblich.com/calculadora-inmobiliaria" />
 
-  <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Calculadora Inmobiliaria | Gastos Compra y Venta" />
+  <meta property="og:title" content="Calculadora Inmobiliaria | Matías Leiblich" />
   <meta property="og:description" content="Calculá los gastos a la hora de comprar y vender una propiedad." />
   <meta property="og:image" content="https://matiasleiblich.com/calculadora-inmobiliaria/preview.jpg" />
-  <meta property="og:image:secure_url" content="https://matiasleiblich.com/calculadora-inmobiliaria/preview.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Calculadora Inmobiliaria — Ingenieros Inmobiliarios" />
   <meta property="og:url" content="https://matiasleiblich.com/calculadora-inmobiliaria" />
-  <meta property="og:site_name" content="Ingenieros Inmobiliarios" />
   <meta property="og:locale" content="es_AR" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Calculadora Inmobiliaria | Gastos Compra y Venta" />
+  <meta name="twitter:title" content="Calculadora Inmobiliaria | Matías Leiblich" />
   <meta name="twitter:description" content="Calculá los gastos a la hora de comprar y vender una propiedad." />
   <meta name="twitter:image" content="https://matiasleiblich.com/calculadora-inmobiliaria/preview.jpg" />
-  <meta name="twitter:image:alt" content="Calculadora Inmobiliaria — Ingenieros Inmobiliarios" />
 
-  <!-- Google Analytics GA4 -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -39,544 +30,552 @@
     gtag('config', 'G-MC47CJF0VL');
   </script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Tabler Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
 
   <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #F5F7FA;
-      color: #1A1A2E;
-      min-height: 100vh;
-    }
+/* ─── SISTEMA DE DISEÑO MATÍAS LEIBLICH ─────────────────────────────── */
+:root {
+  --ml-brand:        #0F3D6B;
+  --ml-brand-light:  #EBF2FB;
+  --ml-accent:       #C9974A;
+  --ml-accent-light: #FBF3E8;
+  --ml-text:         #1A2535;
+  --ml-text-sub:     #4B5563;
+  --ml-muted:        #9CA3AF;
+  --ml-border:       #E8EDF2;
+  --ml-border-dark:  #D1DAE3;
+  --ml-bg:           #F7F9FC;
+  --ml-surface:      #FFFFFF;
+  --ml-success:      #059669;
 
-    /* ── Colores de marca ── */
-    :root {
-      --blue: #1558A8;
-      --blue-light: #E8F0FB;
-      --blue-mid: #4A80C4;
-      --text: #1A1A2E;
-      --text-muted: #6B7280;
-      --text-faint: #9CA3AF;
-      --border: #E5E7EB;
-      --border-strong: #D1D5DB;
-      --surface: #FFFFFF;
-      --surface-alt: #F5F7FA;
-      --success: #059669;
-      --radius: 10px;
-      --radius-lg: 16px;
-    }
+  --ml-font-display: 'DM Sans', sans-serif;
+  --ml-font-body:    'Inter', sans-serif;
 
-    /* ── Navbar ── */
-    nav {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--blue);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: -0.5px;
-    }
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-    .logo-text strong { font-size: 13px; font-weight: 600; color: var(--blue); }
-    .logo-text span { font-size: 11px; color: var(--text-muted); font-weight: 400; }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--blue);
-      border-bottom-color: var(--blue);
-    }
-    @media (max-width: 600px) { .nav-links { display: none; } }
+  --ml-radius-sm:   8px;
+  --ml-radius-md:   12px;
+  --ml-radius-lg:   16px;
 
-    /* ── Page wrapper ── */
-    .page { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  --ml-shadow-card: 0 1px 3px rgba(15,61,107,.06), 0 4px 12px rgba(15,61,107,.04);
+}
 
-    /* ── Hero ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--blue-light);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: .75rem;
-    }
-    .hero h1 {
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: .5rem;
-    }
-    .hero p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 420px;
-    }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--ml-font-body);
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; }
 
-    .hero-actions {
-      display:flex;
-      gap:12px;
-      margin-top:24px;
-      flex-wrap:wrap;
-    }
-    .hero-btn{
-      height:46px;
-      padding:0 24px;
-      border:none;
-      border-radius:10px;
-      cursor:pointer;
-      font-family:'Inter',sans-serif;
-      font-size:14px;
-      font-weight:600;
-    }
-    .hero-btn-primary{
-      background:var(--blue);
-      color:#fff;
-    }
-    .hero-btn-secondary{
-      background:#fff;
-      color:var(--blue);
-      border:1px solid var(--blue);
-    }
+/* ─── NAVBAR ─────────────────────────────────────────────────────────── */
+nav {
+  background: var(--ml-surface);
+  border-bottom: 1px solid var(--ml-border);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img { height: 36px; }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ml-text-sub);
+  transition: color .15s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ml-brand); }
+@media (max-width: 600px) { .nav-links { display: none; } }
 
-    .hero-img {
-      width: 380px;
-      opacity: .95;
-    }
-    @media (max-width: 640px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-img { display: none; }
-      .hero h1 { font-size: 26px; }
-    }
+/* ─── PAGE ───────────────────────────────────────────────────────────── */
+.page { max-width: 960px; margin: 0 auto; padding: 40px 20px 60px; }
 
-    /* ── Main card ── */
-    .main-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,.05);
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-    }
-    @media (max-width: 700px) {
-      .card-grid { grid-template-columns: 1fr; }
-    }
+/* ─── HERO ───────────────────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.hero-eyebrow {
+  font-family: var(--ml-font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ml-accent);
+  margin-bottom: 10px;
+}
+.hero h1 {
+  font-family: var(--ml-font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ml-text);
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.hero-byline {
+  font-size: 13px;
+  color: var(--ml-muted);
+  margin-bottom: 24px;
+}
+.hero-byline a {
+  color: var(--ml-accent);
+  font-weight: 600;
+}
+.hero p {
+  font-size: 14px;
+  color: var(--ml-text-sub);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 24px;
+}
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 14px 20px;
+  min-width: 180px;
+  border-radius: var(--ml-radius-md);
+  cursor: pointer;
+  border: none;
+  font-family: var(--ml-font-display);
+  transition: opacity .15s, transform .1s;
+}
+.hero-btn:hover { opacity: .88; }
+.hero-btn:active { transform: scale(.98); }
+.hero-btn-label { font-size: 16px; font-weight: 700; }
+.hero-btn-sub { font-size: 12px; font-weight: 500; opacity: .8; margin-top: 2px; }
+.hero-btn-primary { background: var(--ml-brand); color: #fff; }
+.hero-btn-secondary { background: var(--ml-surface); color: var(--ml-brand); border: 1.5px solid var(--ml-brand); }
+.hero-btn-secondary .hero-btn-sub { opacity: .6; }
 
-    /* ── Form side ── */
-    .form-side {
-      padding: 2rem;
-      border-right: 1px solid var(--border);
-    }
-    @media (max-width: 700px) {
-      .form-side { border-right: none; border-bottom: 1px solid var(--border); }
-    }
-    .side-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    .side-title i { font-size: 18px; color: var(--blue); }
+.hero-img { width: 340px; opacity: .95; border-radius: var(--ml-radius-lg); }
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-img { display: none; }
+  .hero h1 { font-size: 24px; }
+  .hero-btn { min-width: 140px; }
+}
 
-    .field { margin-bottom: 1.25rem; }
-    .field label {
-      display: block;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    .input-wrap {
-      display: flex;
-      align-items: center;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: #fff;
-      transition: border-color .15s;
-    }
-    .input-wrap:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(21,88,168,.1); }
-    .input-prefix {
-      padding: 0 12px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-muted);
-      background: var(--surface-alt);
-      border-right: 1px solid var(--border);
-    }
-    .input-wrap input {
-      flex: 1;
-      height: 42px;
-      border: none;
-      outline: none;
-      padding: 0 12px;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: transparent;
-    }
-    .input-caption {
-      font-size: 12px;
-      color: var(--text-faint);
-      margin-top: 5px;
-    }
+/* ─── MAIN CARD ──────────────────────────────────────────────────────── */
+.main-card {
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ml-shadow-card);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+}
+@media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
 
-    /* Toggle buttons */
-    .toggle-group { display: flex; gap: 6px; }
-    .tgl {
-      flex: 1;
-      height: 42px;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius);
-      background: #fff;
-      cursor: pointer;
-      font-size: 13px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all .15s;
-    }
-    .tgl i { font-size: 16px; }
-    .tgl:hover { border-color: var(--blue); color: var(--blue); }
-    .tgl.on {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #fff;
-    }
+/* ─── FORM SIDE ──────────────────────────────────────────────────────── */
+.form-side {
+  padding: 28px 28px;
+  border-right: 1px solid var(--ml-border);
+}
+@media (max-width: 700px) {
+  .form-side { border-right: none; border-bottom: 1px solid var(--ml-border); }
+}
+.side-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ml-font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ml-text);
+  margin-bottom: 24px;
+}
+.side-title i { font-size: 18px; color: var(--ml-accent); }
 
-    /* Info pill */
-    .info-pill {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      background: var(--blue-light);
-      border-radius: var(--radius);
-      padding: 9px 12px;
-      font-size: 12px;
-      color: var(--blue);
-      line-height: 1.5;
-      margin-top: 1rem;
-    }
-    .info-pill i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.field { margin-bottom: 20px; }
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ml-text-sub);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--ml-border-dark);
+  border-radius: var(--ml-radius-sm);
+  overflow: hidden;
+  background: var(--ml-surface);
+  transition: border-color .15s;
+}
+.input-wrap:focus-within {
+  border-color: var(--ml-brand);
+  box-shadow: 0 0 0 3px rgba(15,61,107,.08);
+}
+.input-prefix {
+  padding: 0 12px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ml-muted);
+  background: var(--ml-bg);
+  border-right: 1px solid var(--ml-border);
+}
+.input-wrap input {
+  flex: 1;
+  height: 42px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 14px;
+  font-family: var(--ml-font-body);
+  color: var(--ml-text);
+  background: transparent;
+}
+.input-caption {
+  font-size: 11px;
+  color: var(--ml-muted);
+  margin-top: 5px;
+}
 
-    /* Calc button */
-    .btn-calc {
-      width: 100%;
-      height: 48px;
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 1.5rem;
-      letter-spacing: .3px;
-      transition: background .15s, transform .1s;
-    }
-    .btn-calc:hover { background: #1249a0; }
-    .btn-calc:active { transform: scale(.98); }
-    .btn-calc i { font-size: 17px; }
-    .privacy {
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-faint);
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
+/* Toggle buttons */
+.toggle-group { display: flex; gap: 6px; }
+.tgl {
+  flex: 1;
+  height: 42px;
+  border: 1.5px solid var(--ml-border-dark);
+  border-radius: var(--ml-radius-sm);
+  background: var(--ml-surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--ml-font-body);
+  font-weight: 500;
+  color: var(--ml-text-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all .15s;
+}
+.tgl i { font-size: 16px; }
+.tgl:hover { border-color: var(--ml-brand); color: var(--ml-brand); }
+.tgl.on {
+  background: var(--ml-brand);
+  border-color: var(--ml-brand);
+  color: #fff;
+}
 
-    /* ── Result side ── */
-    .result-side {
-      padding: 2rem;
-      background: #FAFBFC;
-    }
-    .result-empty {
-      text-align: center;
-      padding: 4rem 1rem;
-      color: var(--text-faint);
-    }
-    .result-empty i { font-size: 40px; display: block; margin-bottom: 1rem; color: var(--border-strong); }
-    .result-empty p { font-size: 13px; line-height: 1.6; }
+/* Info pill */
+.info-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: var(--ml-brand-light);
+  border-radius: var(--ml-radius-sm);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--ml-brand);
+  line-height: 1.5;
+  margin-top: 16px;
+}
+.info-pill i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
-    /* Line items */
-    .line {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 11px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .line:last-child { border-bottom: none; }
-    .line-l { display: flex; align-items: center; gap: 10px; }
-    .line-icon {
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      background: var(--blue-light);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .line-icon i { font-size: 16px; color: var(--blue); }
-    .line-name { font-size: 13px; font-weight: 500; color: var(--text); }
-    .line-sub { font-size: 11px; color: var(--text-faint); margin-top: 1px; }
-    .line-r { display: flex; align-items: center; gap: 6px; }
-    .line-amount { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; }
-    .line-amount.exento { color: var(--success); }
+/* Calc button */
+.btn-calc {
+  width: 100%;
+  height: 48px;
+  background: var(--ml-brand);
+  color: #fff;
+  border: none;
+  border-radius: var(--ml-radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--ml-font-display);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  letter-spacing: .3px;
+  transition: background .15s, transform .1s;
+}
+.btn-calc:hover { background: #0a2d50; }
+.btn-calc:active { transform: scale(.98); }
+.btn-calc i { font-size: 17px; }
+.privacy {
+  text-align: center;
+  font-size: 11px;
+  color: var(--ml-muted);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
 
-    /* Info tooltip */
-    .tip-wrap { position: relative; }
-    .tip-btn {
-      background: none; border: none; cursor: pointer;
-      color: var(--text-faint); padding: 2px;
-      display: flex; align-items: center;
-    }
-    .tip-btn i { font-size: 15px; }
-    .tip-btn:hover { color: var(--blue); }
-    .tip-box {
-      display: none;
-      position: absolute;
-      right: 0; top: calc(100% + 6px);
-      width: 320px;
-      background: var(--text);
-      color: #fff;
-      font-size: 12px;
-      line-height: 1.5;
-      padding: 10px 12px;
-      border-radius: var(--radius);
-      z-index: 20;
-      pointer-events: none;
-    }
-    .tip-wrap:hover .tip-box,
-    .tip-wrap:focus-within .tip-box { display: block; }
+/* ─── RESULT SIDE ────────────────────────────────────────────────────── */
+.result-side {
+  padding: 28px;
+  background: var(--ml-bg);
+}
+.result-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--ml-muted);
+}
+.result-empty i { font-size: 40px; display: block; margin-bottom: 1rem; color: var(--ml-border-dark); }
+.result-empty p { font-size: 13px; line-height: 1.6; }
 
-    /* Divider */
-    hr.sep { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+/* Line items */
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--ml-border);
+}
+.line:last-child { border-bottom: none; }
+.line-l { display: flex; align-items: center; gap: 10px; }
+.line-icon {
+  width: 34px; height: 34px;
+  border-radius: var(--ml-radius-sm);
+  background: var(--ml-brand-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.line-icon i { font-size: 16px; color: var(--ml-brand); }
+.line-name { font-size: 13px; font-weight: 500; color: var(--ml-text); }
+.line-sub { font-size: 11px; color: var(--ml-muted); margin-top: 1px; }
+.line-r { display: flex; align-items: center; gap: 6px; }
+.line-amount { font-size: 14px; font-weight: 600; color: var(--ml-text); white-space: nowrap; }
+.line-amount.exento { color: var(--ml-success); }
 
-    /* Total row */
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px 0;
-    }
-    .total-label { font-size: 13px; font-weight: 600; color: var(--blue); }
-    .total-num { font-size: 20px; font-weight: 700; color: var(--blue); }
+/* Tooltip */
+.tip-wrap { position: relative; }
+.tip-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--ml-muted); padding: 2px;
+  display: flex; align-items: center;
+}
+.tip-btn i { font-size: 15px; }
+.tip-btn:hover { color: var(--ml-brand); }
+.tip-box {
+  display: none;
+  position: absolute;
+  right: 0; top: calc(100% + 6px);
+  width: 300px;
+  background: var(--ml-text);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: var(--ml-radius-sm);
+  z-index: 20;
+  pointer-events: none;
+}
+.tip-wrap:hover .tip-box,
+.tip-wrap:focus-within .tip-box { display: block; }
 
-    /* Grand total box */
-    .grand {
-      background: var(--blue);
-      border-radius: var(--radius);
-      padding: 16px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 12px;
-    }
-    .grand-label { font-size: 12px; color: rgba(255,255,255,.75); letter-spacing: .5px; font-weight: 500; }
-    .grand-sub { font-size: 11px; color: rgba(255,255,255,.5); margin-top: 3px; }
-    .grand-num { font-size: 26px; font-weight: 700; color: #fff; }
+hr.sep { border: none; border-top: 1px solid var(--ml-border); margin: 14px 0; }
 
-    /* ── Below the card ── */
-    .below { margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 600px) { .below { grid-template-columns: 1fr; } }
+/* Total row */
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+.total-label { font-size: 12px; font-weight: 700; color: var(--ml-brand); letter-spacing: .04em; font-family: var(--ml-font-display); }
+.total-num { font-size: 20px; font-weight: 700; color: var(--ml-brand); }
 
-    .cta-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-    }
-    .cta-card-icon {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      background: var(--blue-light);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: .25rem;
-    }
-    .cta-card-icon i { font-size: 22px; color: var(--blue); }
-    .cta-card h3 { font-size: 15px; font-weight: 600; color: var(--text); }
-    .cta-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; flex: 1; }
-    .cta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--blue);
-      text-decoration: none;
-      margin-top: .5rem;
-    }
-    .cta-link:hover { text-decoration: underline; }
+/* Grand total */
+.grand {
+  background: var(--ml-brand);
+  border-radius: var(--ml-radius-md);
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.grand-label { font-size: 11px; color: rgba(255,255,255,.7); letter-spacing: .05em; font-weight: 600; font-family: var(--ml-font-display); }
+.grand-sub { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 3px; }
+.grand-num { font-size: 26px; font-weight: 700; color: #fff; font-family: var(--ml-font-display); }
 
-    /* Features strip */
-    .features {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-    @media (max-width: 600px) { .features { grid-template-columns: 1fr 1fr; } }
-    .feat { text-align: center; }
-    .feat i { font-size: 24px; color: var(--blue); display: block; margin-bottom: .5rem; }
-    .feat-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .feat-sub { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+/* ─── CTA CARDS BELOW ────────────────────────────────────────────────── */
+.below {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 600px) { .below { grid-template-columns: 1fr; } }
 
-    /* Footer */
-    footer {
-      margin-top: 4rem;
-      border-top: 1px solid var(--border);
-      padding: 2rem 1.25rem;
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer p { font-size: 12px; color: var(--text-faint); }
-    .footer-links { display: flex; gap: 1.25rem; }
-    .footer-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .footer-links a:hover { color: var(--blue); }
+.cta-card {
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-top: 3px solid var(--ml-brand);
+  border-radius: var(--ml-radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--ml-shadow-card);
+  transition: transform .18s, box-shadow .18s;
+}
+.cta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15,61,107,.10);
+}
+.cta-card-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--ml-radius-sm);
+  background: var(--ml-brand-light);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 4px;
+}
+.cta-card-icon i { font-size: 22px; color: var(--ml-brand); }
+.cta-card h3 {
+  font-family: var(--ml-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ml-text);
+}
+.cta-card p { font-size: 13px; color: var(--ml-text-sub); line-height: 1.5; flex: 1; }
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ml-brand);
+  margin-top: 4px;
+}
+.cta-link:hover { color: var(--ml-accent); }
+.cta-links-row { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+
+/* ─── FEATURES ───────────────────────────────────────────────────────── */
+.features {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ml-border);
+}
+@media (max-width: 600px) { .features { grid-template-columns: 1fr 1fr; } }
+.feat { text-align: center; }
+.feat i { font-size: 24px; color: var(--ml-accent); display: block; margin-bottom: 8px; }
+.feat-title { font-size: 13px; font-weight: 600; color: var(--ml-text); margin-bottom: 3px; font-family: var(--ml-font-display); }
+.feat-sub { font-size: 12px; color: var(--ml-muted); line-height: 1.4; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────── */
+footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--ml-border);
+  padding: 24px 20px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-brand {
+  font-family: var(--ml-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ml-text);
+}
+.footer-sub { font-size: 11px; color: var(--ml-muted); margin-top: 2px; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-size: 13px;
+  color: var(--ml-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+.footer-links a:hover { color: var(--ml-brand); }
   </style>
 </head>
 <body>
 
-<!-- ── Navbar ── -->
+<!-- NAVBAR -->
 <nav>
-  <a class="nav-logo" href="#">
-    <img src="Logo IN2.png" alt="Ingenieros Inmobiliarios" style="height:42px;">
-  </a>
-  <ul class="nav-links">
-    <li><a href="#" class="active">Herramientas</a></li>
-    <li><a href="https://www.ingenierosinmobiliarios.com.ar" target="_blank">Sobre nosotros</a></li>
-    <li><a href="https://matiasleiblich.github.io/cartera/" target="_blank">Cartera</a></li>
-    <li><a href="https://matiasleiblich.github.io/" target="_blank">Contacto</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://matiasleiblich.com">
+      <img src="../Logo IN2.png" alt="Ingenieros Inmobiliarios">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Herramientas</a></li>
+      <li><a href="https://www.ingenierosinmobiliarios.com.ar" target="_blank">Sobre nosotros</a></li>
+      <li><a href="https://matiasleiblich.com/cartera" target="_blank">Cartera</a></li>
+      <li><a href="https://matiasleiblich.com" target="_blank">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- ── Page ── -->
 <div class="page">
 
-  <!-- Hero -->
+  <!-- HERO -->
   <div class="hero">
     <div>
-      <div class="hero-badge">
-        <i class="ti ti-calculator"></i> Herramienta profesional
-      </div>
-      <h1>CALCULADORA INMOBILIARIA</h1>
-      <p>Conocé cuánto necesitás para comprar o cuánto recibirás al vender una propiedad.</p>
+      <div class="hero-eyebrow"><i class="ti ti-calculator" style="font-size:11px;margin-right:4px"></i>Herramienta profesional</div>
+      <h1>Calculadora<br>Inmobiliaria</h1>
+      <div class="hero-byline">por <a href="https://matiasleiblich.com">Matías Leiblich</a> · Ingenieros Inmobiliarios</div>
+      <p>Conocé cuánto necesitás para comprar, o cuánto vas a recibir al vender una propiedad.</p>
       <div class="hero-actions">
-        <div class="hero-btn hero-btn-primary" onclick="mostrarCompra()" style="height:auto;padding:18px;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:18px;">🏠 COMPRAR</div>
-          <div style="font-size:12px;font-weight:500;opacity:.9;">Estimá los gastos</div>
-        </div>
-        <div class="hero-btn hero-btn-secondary" onclick="mostrarVenta()" style="height:auto;padding:18px;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:18px;">💰 VENDER</div>
-          <div style="font-size:12px;font-weight:500;">Estimá el Neto</div>
-        </div>
+        <button class="hero-btn hero-btn-primary" onclick="mostrarCompra()">
+          <div class="hero-btn-label"><i class="ti ti-home" style="font-size:15px;margin-right:6px"></i>Comprar</div>
+          <div class="hero-btn-sub">Estimá los gastos de compra</div>
+        </button>
+        <button class="hero-btn hero-btn-secondary" onclick="mostrarVenta()">
+          <div class="hero-btn-label"><i class="ti ti-coins" style="font-size:15px;margin-right:6px"></i>Vender</div>
+          <div class="hero-btn-sub">Estimá el neto de venta</div>
+        </button>
       </div>
-      <div style="margin-top:12px;color:#6B7280;font-size:13px;">Herramientas desarrolladas por Ingenieros Inmobiliarios</div>
     </div>
     <img class="hero-img" src="Dibujo Casa.jpeg" alt="Arquitectura">
   </div>
 
-  <!-- Main calculator card -->
+  <!-- CALCULADORA COMPRA -->
   <div class="main-card" id="compra-section" style="display:none;">
     <div class="card-grid">
-
-      <!-- Left: form -->
       <div class="form-side">
         <div class="side-title">
           <i class="ti ti-calculator"></i>
@@ -612,8 +611,6 @@
           </div>
         </div>
 
-        
-
         <div class="field" id="field-primera">
           <label>¿Es tu primera vivienda?</label>
           <div class="toggle-group">
@@ -633,7 +630,7 @@
 
         <button class="btn-calc" onclick="calcular()">
           <i class="ti ti-calculator"></i>
-          CALCULAR GASTOS
+          Calcular gastos
         </button>
         <p class="privacy">
           <i class="ti ti-lock" style="font-size:12px"></i>
@@ -641,18 +638,15 @@
         </p>
       </div>
 
-      <!-- Right: results -->
       <div class="result-side">
         <div class="side-title">
           <i class="ti ti-currency-dollar"></i>
           Resultado estimado
         </div>
-
-        <div class="info-pill" style="margin-bottom:1.25rem">
+        <div class="info-pill" style="margin-bottom:20px">
           <i class="ti ti-alert-circle"></i>
           Los valores son estimativos y pueden variar según cada operación y escribanía interviniente.
         </div>
-
         <div id="result-body">
           <div class="result-empty">
             <i class="ti ti-home-search"></i>
@@ -660,12 +654,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-
-  
+  <!-- CALCULADORA VENTA -->
   <div id="venta-section" class="main-card" style="display:none;">
     <div class="card-grid">
       <div class="form-side">
@@ -700,64 +692,58 @@
 
         <button class="btn-calc" onclick="calcularVenta()">
           <i class="ti ti-calculator"></i>
-          CALCULAR NETO
+          Calcular neto
         </button>
       </div>
 
       <div class="result-side">
         <div class="side-title"><i class="ti ti-currency-dollar"></i> Resultado estimado</div>
-        <div class="info-pill" style="margin-bottom:1.25rem"><i class="ti ti-alert-circle"></i>Los valores son estimativos y pueden variar según cada operación y escribanía interviniente.</div>
+        <div class="info-pill" style="margin-bottom:20px"><i class="ti ti-alert-circle"></i>Los valores son estimativos y pueden variar según cada operación y escribanía interviniente.</div>
         <div id="venta-result">
           <div class="result-empty">
             <i class="ti ti-home-dollar"></i>
-            <p>Completá los datos y presioná <strong>Calcular Neto</strong>.</p>
+            <p>Completá los datos y presioná <strong>Calcular neto</strong>.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- CTA CARDS -->
+  <div class="below">
+    <div class="cta-card" id="ayuda-card">
+      <div class="cta-card-icon"><i class="ti ti-message-circle"></i></div>
+      <h3 id="ayuda-titulo">¿Necesitás ayuda con tu operación?</h3>
+      <p id="ayuda-texto">Contame en qué etapa estás y te oriento sin compromiso.</p>
+      <div id="ayuda-botones" class="cta-links-row">
+        <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link"><i class="ti ti-home"></i>Quiero comprar</a>
+        <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link"><i class="ti ti-coins"></i>Quiero vender</a>
+      </div>
+    </div>
 
-  <!-- CTA cards -->
-  
+    <div class="cta-card">
+      <div class="cta-card-icon"><i class="ti ti-search"></i></div>
+      <h3>¿Estás buscando tu próxima propiedad?</h3>
+      <p>Acompañamiento profesional de arquitectos e ingenieros durante todo el proceso de búsqueda.</p>
+      <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20buscando%20una%20propiedad%20y%20quisiera%20recibir%20asesoramiento." target="_blank" class="cta-link"><i class="ti ti-search"></i>Recibir asesoramiento</a>
+    </div>
 
-<div class="below">
+    <div class="cta-card">
+      <div class="cta-card-icon"><i class="ti ti-books"></i></div>
+      <h3>Guías gratuitas</h3>
+      <p>Material informativo para compradores, vendedores e inversores. Descargá y aprendé a tu ritmo.</p>
+      <a href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank" class="cta-link"><i class="ti ti-books"></i>Ver biblioteca</a>
+    </div>
 
-  <div class="cta-card" id="ayuda-card">
-    <div class="cta-card-icon"><i class="ti ti-message-circle"></i></div>
-    <h3 id="ayuda-titulo">¿Necesitás ayuda con tu operación?</h3>
-    <p id="ayuda-texto">¡Nosotros te ayudamos!</p>
-    <div id="ayuda-botones" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
-      <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link">🏠 Quiero Comprar</a>
-      <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link">💰 Quiero Vender</a>
+    <div class="cta-card">
+      <div class="cta-card-icon"><i class="ti ti-ruler-measure"></i></div>
+      <h3>¿Qué hacer con mi lote?</h3>
+      <p>Analizamos indicadores urbanísticos y potencial constructivo para proyectos de inversión.</p>
+      <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20consultar%20por%20un%20analisis%20de%20prefactibilidad%20para%20un%20lote." target="_blank" class="cta-link"><i class="ti ti-ruler-measure"></i>Solicitar análisis</a>
     </div>
   </div>
 
-  <div class="cta-card">
-    <div class="cta-card-icon"><i class="ti ti-search"></i></div>
-    <h3>¿Estás buscando tu próxima propiedad?</h3>
-    <p>Recibí acompañamiento profesional de parte de nuestros arquitectos e ingenieros durante todo el proceso de búsqueda.</p>
-    <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20buscando%20una%20propiedad%20y%20quisiera%20recibir%20asesoramiento." target="_blank" class="cta-link">🔍 Quiero recibir asesoramiento</a>
-  </div>
-
-  <div class="cta-card">
-    <div class="cta-card-icon"><i class="ti ti-books"></i></div>
-    <h3>Guías gratuitas</h3>
-    <p>Descargá nuestras guías inmobiliarias y material informativo para compradores, vendedores e inversores.</p>
-    <a href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank" class="cta-link">📚 Ver biblioteca</a>
-  </div>
-
-  <div class="cta-card">
-    <div class="cta-card-icon"><i class="ti ti-ruler-2"></i></div>
-    <h3>¿Qué hacer con mi lote?</h3>
-    <p>Analizamos indicadores urbanísticos y potencial constructivo para inversión.</p>
-    <a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20consultar%20por%20un%20analisis%20de%20prefactibilidad%20para%20un%20lote." target="_blank" class="cta-link">📐 Solicitar análisis de prefactibilidad</a>
-  </div>
-
-</div>
-<!-- Features -->
-
-
+  <!-- FEATURES -->
   <div class="features">
     <div class="feat">
       <i class="ti ti-shield-check"></i>
@@ -783,288 +769,236 @@
 
 </div><!-- /page -->
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 Ingenieros Inmobiliarios · Los valores exhibidos son estimativos.</p>
+  <div>
+    <div class="footer-brand">Matías Leiblich</div>
+    <div class="footer-sub">Ingenieros Inmobiliarios · Los valores son estimativos.</div>
+  </div>
   <div class="footer-links">
-    <a href="https://www.instagram.com/tutemudas" target="_blank">
-      <i class="ti ti-brand-instagram"></i> Instagram
-    </a>
-    <a href="https://linkedin.com/in/matias-leiblich" target="_blank">
-      <i class="ti ti-brand-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://www.tiktok.com/@tutemudas" target="_blank">
-      <i class="ti ti-brand-tiktok"></i> TikTok
-    </a>
-    <a href="http://www.ingenierosinmobiliarios.com.ar" target="_blank">
-      <i class="ti ti-world"></i> Sitio web
-    </a>
+    <a href="https://www.instagram.com/tutemudas" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+    <a href="https://linkedin.com/in/matias-leiblich" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+    <a href="https://www.tiktok.com/@tutemudas" target="_blank"><i class="ti ti-brand-tiktok"></i> TikTok</a>
+    <a href="https://matiasleiblich.com" target="_blank"><i class="ti ti-home"></i> Portal</a>
   </div>
 </footer>
 
 <script>
+/* ── Estado ── */
+let juris = 'caba';
+let primera = true;
 
-
-
-function actualizarCTA(tipo){
- const t=document.getElementById('ayuda-titulo');
- const b=document.getElementById('ayuda-botones');
-
- if(tipo==='compra'){
-  t.textContent='¿Necesitás ayuda con tu compra?';
-  b.innerHTML='<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link">🏠 Quiero Comprar</a>';
- } else if(tipo==='venta'){
-  t.textContent='¿Necesitás ayuda con tu venta?';
-  b.innerHTML='<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link">💰 Quiero Vender</a>';
- } else {
-  t.textContent='¿Necesitás ayuda con tu operación?';
-  b.innerHTML='<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link">🏠 Quiero Comprar</a><a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link">💰 Quiero Vender</a>';
- }
+/* ── Formateo ── */
+function parseNum(id) {
+  const v = document.getElementById(id).value.replace(/\./g, '').replace(/,/g, '.');
+  return parseFloat(v) || 0;
+}
+function fmtInput(el) {
+  const raw = el.value.replace(/\D/g, '');
+  if (raw === '') { el.value = ''; return; }
+  el.value = parseInt(raw, 10).toLocaleString('es-AR');
+}
+function fmtUSD(n) {
+  return 'USD\u00A0' + Math.round(n).toLocaleString('es-AR');
 }
 
+document.getElementById('inp-valor').addEventListener('input', function() { fmtInput(this); });
+document.getElementById('inp-dolar').addEventListener('input', function() { fmtInput(this); actualizarExencion(); });
+document.getElementById('venta-valor').addEventListener('input', function() { fmtInput(this); });
+document.getElementById('venta-dolar').addEventListener('input', function() { fmtInput(this); });
 
-
-function mostrarCompra(){
-  document.getElementById('compra-section').style.display='block';
-  document.getElementById('venta-section').style.display='none';
-  actualizarCTA('compra');
-  document.getElementById('compra-section').scrollIntoView({behavior:'smooth'});
+/* ── Controles ── */
+function setJuris(j) {
+  juris = j;
+  setActive('btn-caba', j === 'caba');
+  setActive('btn-pba',  j === 'pba');
+  actualizarExencion();
 }
-
-function mostrarVenta(){
-  document.getElementById('venta-section').style.display='block';
-  document.getElementById('compra-section').style.display='none';
-  actualizarCTA('venta');
-  document.getElementById('venta-section').scrollIntoView({behavior:'smooth'});
+function setPrimera(v) {
+  primera = v;
+  setActive('btn-si', v);
+  setActive('btn-no', !v);
+  actualizarExencion();
 }
-
-
-  /* ── Estado ── */
-  let juris = 'caba';
-    let primera = true;
-
-  /* ── Formateo de inputs ── */
-  function parseNum(id) {
-    const v = document.getElementById(id).value.replace(/\./g, '').replace(/,/g, '.');
-    return parseFloat(v) || 0;
-  }
-  function fmtInput(el) {
-    const raw = el.value.replace(/\D/g, '');
-    if (raw === '') { el.value = ''; return; }
-    el.value = parseInt(raw, 10).toLocaleString('es-AR');
-  }
-  function fmtUSD(n) {
-    return 'USD\u00A0' + Math.round(n).toLocaleString('es-AR');
-  }
-
-  document.getElementById('inp-valor').addEventListener('input', function() { fmtInput(this); });
-  document.getElementById('inp-dolar').addEventListener('input', function() {
-    fmtInput(this); actualizarExencion();
-  });
-
-  document.getElementById('venta-valor').addEventListener('input', function() { fmtInput(this); });
-  document.getElementById('venta-dolar').addEventListener('input', function() { fmtInput(this); });
-
-  /* ── Controles de jurisdicción / tipo / primera ── */
-  function setJuris(j) {
-    juris = j;
-    setActive('btn-caba', j === 'caba');
-    setActive('btn-pba',  j === 'pba');
-    actualizarExencion();
-  }
-
-  function setTipo(t) {}
-
-  function setPrimera(v) {
-    primera = v;
-    setActive('btn-si', v);
-    setActive('btn-no', !v);
-    actualizarExencion();
-  }
-
-  function setActive(id, on) {
-    const el = document.getElementById(id);
-    el.className = on ? 'tgl on' : 'tgl';
-  }
-
-  function actualizarExencion() {
-    const box = document.getElementById('exencion-info');
-    if (juris === 'caba') {
-      const dolar = parseNum('inp-dolar') || 1480;
-      const lim = Math.round(226100000 / dolar);
-      document.getElementById('exencion-txt').textContent =
-        `Límite vigente para exención de primera vivienda: USD\u00A0${lim.toLocaleString('es-AR')}`;
-      box.style.display = 'flex';
-    } else {
-      box.style.display = 'none';
-    }
-  }
-
-  /* ── Cálculo ── */
-  function calcular() {
-    const valor = parseNum('inp-valor');
+function setActive(id, on) {
+  document.getElementById(id).className = on ? 'tgl on' : 'tgl';
+}
+function actualizarExencion() {
+  const box = document.getElementById('exencion-info');
+  if (juris === 'caba') {
     const dolar = parseNum('inp-dolar') || 1480;
-
-    if (!valor || valor <= 0) {
-      document.getElementById('result-body').innerHTML =
-        `<div class="result-empty">
-          <i class="ti ti-alert-circle" style="color:#EF4444"></i>
-          <p>Ingresá el valor de compra para continuar.</p>
-        </div>`;
-      return;
-    }
-
-    /* Sellos */
-    let sellos, pct_sellos, sellos_desc, sellos_exento = false;
-    const valPesos = valor * dolar;
-    const LIMITE = 226_100_000;
-
-    if (juris === 'pba') {
-      sellos = valor * 0.02;
-      pct_sellos = '2% · Provincia de Buenos Aires';
-      sellos_desc = 'Impuesto que grava la transferencia de inmuebles en la Provincia de Buenos Aires.';
-    } else {
-      if (primera) {
-        if (valPesos <= LIMITE) {
-          sellos = 0;
-          sellos_exento = true;
-          pct_sellos = 'Exento — primera vivienda';
-          sellos_desc = 'La operación se encuentra por debajo del límite de exención vigente para primera vivienda en CABA.';
-        } else {
-          const excedente = valPesos - LIMITE;
-          sellos = (excedente * 0.0175) / dolar;
-          pct_sellos = '1,75% sobre excedente del límite';
-          sellos_desc = 'Solo tributa la porción del valor que supera el límite de exención de primera vivienda.';
-        }
-      } else {
-        sellos = valor * (valPesos <= LIMITE ? 0.0135 : 0.0175);
-        pct_sellos = valPesos <= LIMITE ? '1,35% · CABA' : '1,75% · CABA';
-        sellos_desc = 'Impuesto de sellos sobre transferencia de inmuebles en la Ciudad Autónoma de Buenos Aires.';
-      }
-    }
-
-    /* Honorarios y gastos */
-    const escribania = Math.max(valor * 0.015, 1000);
-    const escrituracion = valor * 0.02;
-    const pct_com = juris === 'pba' ? 0.03 : 0.04;
-    const comision = valor * pct_com;
-
-    const total = sellos + escribania + escrituracion + comision;
-    const gran_total = valor + total;
-
-    const items = [
-      {
-        icon: 'ti-building-estate',
-        name: 'Impuesto de sellos',
-        sub: pct_sellos,
-        amount: sellos,
-        exento: sellos_exento,
-        desc: sellos_desc
-      },
-      {
-        icon: 'ti-writing',
-        name: 'Honorarios notariales',
-        sub: '1,5% del valor de compra · mínimo USD 1.000',
-        amount: escribania,
-        desc: 'Honorarios del escribano interviniente en la escrituración de la propiedad.'
-      },
-      {
-        icon: 'ti-file-text',
-        name: 'Gastos de escrituración',
-        sub: '2% del valor de compra',
-        amount: escrituracion,
-        desc: 'Incluye certificados, informes registrales, tasas y gastos administrativos.'
-      },
-      {
-        icon: 'ti-users',
-        name: 'Honorarios inmobiliarios',
-        sub: `${pct_com * 100}% del valor de compra`,
-        amount: comision,
-        desc: `Comisión correspondiente a la intervención de la inmobiliaria (${juris === 'pba' ? '3% Provincia' : '4% CABA'}).`
-      }
-    ];
-
-    const rows = items.map(it => `
-      <div class="line">
-        <div class="line-l">
-          <div class="line-icon"><i class="ti ${it.icon}"></i></div>
-          <div>
-            <div class="line-name">${it.name}</div>
-            <div class="line-sub">${it.sub}</div>
-          </div>
-        </div>
-        <div class="line-r">
-          <span class="line-amount${it.exento ? ' exento' : ''}">${it.exento ? 'Exento' : fmtUSD(it.amount)}</span>
-          <div class="tip-wrap">
-            <button class="tip-btn" aria-label="Más info sobre ${it.name}">
-              <i class="ti ti-info-circle"></i>
-            </button>
-            <div class="tip-box">${it.desc}</div>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    document.getElementById('result-body').innerHTML = `
-      <div>${rows}</div>
-      <hr class="sep" />
-      <div class="total-row">
-        <span class="total-label">TOTAL DE GASTOS</span>
-        <span class="total-num">${fmtUSD(total)}</span>
-      </div>
-      <div class="grand">
-        <div>
-          <div class="grand-label">MONTO TOTAL NECESARIO</div>
-          <div class="grand-sub">Valor de compra + total de gastos</div>
-        </div>
-        <div class="grand-num">${fmtUSD(gran_total)}</div>
-      </div>
-    `;
+    const lim = Math.round(226100000 / dolar);
+    document.getElementById('exencion-txt').textContent =
+      `Límite vigente para exención de primera vivienda: USD\u00A0${lim.toLocaleString('es-AR')}`;
+    box.style.display = 'flex';
+  } else {
+    box.style.display = 'none';
   }
-
-  
-let ventaJuris='caba';
-
-function setVentaJuris(j){
- ventaJuris=j;
- document.getElementById('v-caba').className=j==='caba'?'tgl on':'tgl';
- document.getElementById('v-pba').className=j==='pba'?'tgl on':'tgl';
 }
 
-function calcularVenta(){
- const valor=parseFloat((document.getElementById('venta-valor').value||'0').replace(/\./g,''))||0;
- const dolar=parseFloat((document.getElementById('venta-dolar').value||'1480').replace(/\./g,''))||1480;
+/* ── Cálculo compra ── */
+function calcular() {
+  const valor = parseNum('inp-valor');
+  const dolar = parseNum('inp-dolar') || 1480;
 
- if(!valor){return;}
+  if (!valor || valor <= 0) {
+    document.getElementById('result-body').innerHTML =
+      `<div class="result-empty">
+        <i class="ti ti-alert-circle" style="color:#EF4444"></i>
+        <p>Ingresá el valor de compra para continuar.</p>
+      </div>`;
+    return;
+  }
 
- const comision=valor*0.03;
- const pre=valor*0.02;
+  let sellos, pct_sellos, sellos_desc, sellos_exento = false;
+  const valPesos = valor * dolar;
+  const LIMITE = 226_100_000;
 
- let sellos=0;
- let nota='* Habitualmente lo abona el comprador.';
- let tip='El impuesto corresponde al 2% del valor de venta. En la Provincia de Buenos Aires el impuesto suele estar a cargo del comprador, aunque las partes pueden pactar una distribución diferente.';
+  if (juris === 'pba') {
+    sellos = valor * 0.02;
+    pct_sellos = '2% · Provincia de Buenos Aires';
+    sellos_desc = 'Impuesto que grava la transferencia de inmuebles en la Provincia de Buenos Aires.';
+  } else {
+    if (primera) {
+      if (valPesos <= LIMITE) {
+        sellos = 0; sellos_exento = true;
+        pct_sellos = 'Exento — primera vivienda';
+        sellos_desc = 'La operación se encuentra por debajo del límite de exención vigente para primera vivienda en CABA.';
+      } else {
+        const excedente = valPesos - LIMITE;
+        sellos = (excedente * 0.0175) / dolar;
+        pct_sellos = '1,75% sobre excedente del límite';
+        sellos_desc = 'Solo tributa la porción del valor que supera el límite de exención de primera vivienda.';
+      }
+    } else {
+      sellos = valor * (valPesos <= LIMITE ? 0.0135 : 0.0175);
+      pct_sellos = valPesos <= LIMITE ? '1,35% · CABA' : '1,75% · CABA';
+      sellos_desc = 'Impuesto de sellos sobre transferencia de inmuebles en CABA.';
+    }
+  }
 
- if(ventaJuris==='caba'){
-   const pesos=valor*dolar;
-   sellos=valor*(pesos<=226100000?0.0135:0.0175);
-   nota='* Se considera que el comprador posee otra propiedad en CABA.';
-   tip='Se estima la parte correspondiente al vendedor. Si el comprador adquiere su primera vivienda y se encuentra dentro del límite de exención vigente, este importe podría reducirse o resultar exento.';
- }
+  const escribania = Math.max(valor * 0.015, 1000);
+  const escrituracion = valor * 0.02;
+  const pct_com = juris === 'pba' ? 0.03 : 0.04;
+  const comision = valor * pct_com;
+  const total = sellos + escribania + escrituracion + comision;
+  const gran_total = valor + total;
 
- const gastos=comision+pre+sellos;
- const neto=valor-gastos;
+  const items = [
+    { icon: 'ti-building-estate', name: 'Impuesto de sellos', sub: pct_sellos, amount: sellos, exento: sellos_exento, desc: sellos_desc },
+    { icon: 'ti-writing', name: 'Honorarios notariales', sub: '1,5% del valor de compra · mínimo USD 1.000', amount: escribania, desc: 'Honorarios del escribano interviniente en la escrituración de la propiedad.' },
+    { icon: 'ti-file-text', name: 'Gastos de escrituración', sub: '2% del valor de compra', amount: escrituracion, desc: 'Incluye certificados, informes registrales, tasas y gastos administrativos.' },
+    { icon: 'ti-users', name: 'Honorarios inmobiliarios', sub: `${pct_com * 100}% del valor de compra`, amount: comision, desc: `Comisión correspondiente a la intervención de la inmobiliaria (${juris === 'pba' ? '3% Provincia' : '4% CABA'}).` }
+  ];
 
- document.getElementById('venta-result').innerHTML=`
- <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-building-estate"></i></div><div><div class="line-name">Impuesto de sellos*</div><div class="line-sub">${nota}</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(sellos)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">${tip}</div></div></div></div>
- <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-users"></i></div><div><div class="line-name">Honorarios inmobiliarios</div><div class="line-sub">3% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(comision)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">Honorarios correspondientes a la intervención de la inmobiliaria. Se estima un 3% del valor de venta.</div></div></div></div>
- <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-file-text"></i></div><div><div class="line-name">Gastos preescriturarios</div><div class="line-sub">2% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(pre)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">Incluye Estudio de Títulos, Certificados, Diligenciamientos, entre otros.</div></div></div></div>
- <hr class="sep"/>
- <div class="total-row"><span class="total-label">TOTAL DE GASTOS</span><span class="total-num">${fmtUSD(gastos)}</span></div>
- <div class="grand"><div><div class="grand-label">NETO ESTIMADO A RECIBIR</div><div class="grand-sub">Valor de venta - gastos estimados</div></div><div class="grand-num">${fmtUSD(neto)}</div></div>`;
+  const rows = items.map(it => `
+    <div class="line">
+      <div class="line-l">
+        <div class="line-icon"><i class="ti ${it.icon}"></i></div>
+        <div>
+          <div class="line-name">${it.name}</div>
+          <div class="line-sub">${it.sub}</div>
+        </div>
+      </div>
+      <div class="line-r">
+        <span class="line-amount${it.exento ? ' exento' : ''}">${it.exento ? 'Exento' : fmtUSD(it.amount)}</span>
+        <div class="tip-wrap">
+          <button class="tip-btn" aria-label="Más info sobre ${it.name}"><i class="ti ti-info-circle"></i></button>
+          <div class="tip-box">${it.desc}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('result-body').innerHTML = `
+    <div>${rows}</div>
+    <hr class="sep" />
+    <div class="total-row">
+      <span class="total-label">Total de gastos</span>
+      <span class="total-num">${fmtUSD(total)}</span>
+    </div>
+    <div class="grand">
+      <div>
+        <div class="grand-label">Monto total necesario</div>
+        <div class="grand-sub">Valor de compra + total de gastos</div>
+      </div>
+      <div class="grand-num">${fmtUSD(gran_total)}</div>
+    </div>
+  `;
+}
+
+/* ── Cálculo venta ── */
+let ventaJuris = 'caba';
+
+function setVentaJuris(j) {
+  ventaJuris = j;
+  document.getElementById('v-caba').className = j === 'caba' ? 'tgl on' : 'tgl';
+  document.getElementById('v-pba').className  = j === 'pba'  ? 'tgl on' : 'tgl';
+}
+
+function calcularVenta() {
+  const valor = parseFloat((document.getElementById('venta-valor').value || '0').replace(/\./g, '')) || 0;
+  const dolar = parseFloat((document.getElementById('venta-dolar').value || '1480').replace(/\./g, '')) || 1480;
+  if (!valor) return;
+
+  const comision = valor * 0.03;
+  const pre = valor * 0.02;
+  let sellos = 0;
+  let nota = '* Habitualmente lo abona el comprador.';
+  let tip = 'El impuesto corresponde al 2% del valor de venta. En la Provincia de Buenos Aires el impuesto suele estar a cargo del comprador, aunque las partes pueden pactar una distribución diferente.';
+
+  if (ventaJuris === 'caba') {
+    const pesos = valor * dolar;
+    sellos = valor * (pesos <= 226100000 ? 0.0135 : 0.0175);
+    nota = '* Se considera que el comprador posee otra propiedad en CABA.';
+    tip = 'Se estima la parte correspondiente al vendedor. Si el comprador adquiere su primera vivienda y se encuentra dentro del límite de exención vigente, este importe podría reducirse o resultar exento.';
+  }
+
+  const gastos = comision + pre + sellos;
+  const neto = valor - gastos;
+
+  document.getElementById('venta-result').innerHTML = `
+    <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-building-estate"></i></div><div><div class="line-name">Impuesto de sellos*</div><div class="line-sub">${nota}</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(sellos)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">${tip}</div></div></div></div>
+    <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-users"></i></div><div><div class="line-name">Honorarios inmobiliarios</div><div class="line-sub">3% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(comision)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">Honorarios correspondientes a la intervención de la inmobiliaria. Se estima un 3% del valor de venta.</div></div></div></div>
+    <div class="line"><div class="line-l"><div class="line-icon"><i class="ti ti-file-text"></i></div><div><div class="line-name">Gastos preescriturarios</div><div class="line-sub">2% del valor de venta</div></div></div><div class="line-r"><span class="line-amount">${fmtUSD(pre)}</span><div class="tip-wrap"><button class="tip-btn"><i class="ti ti-info-circle"></i></button><div class="tip-box">Incluye Estudio de Títulos, Certificados, Diligenciamientos, entre otros.</div></div></div></div>
+    <hr class="sep"/>
+    <div class="total-row"><span class="total-label">Total de gastos</span><span class="total-num">${fmtUSD(gastos)}</span></div>
+    <div class="grand"><div><div class="grand-label">Neto estimado a recibir</div><div class="grand-sub">Valor de venta − gastos estimados</div></div><div class="grand-num">${fmtUSD(neto)}</div></div>
+  `;
+}
+
+/* ── CTA dinámico ── */
+function actualizarCTA(tipo) {
+  const t = document.getElementById('ayuda-titulo');
+  const b = document.getElementById('ayuda-botones');
+  if (tipo === 'compra') {
+    t.textContent = '¿Necesitás ayuda con tu compra?';
+    b.innerHTML = '<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link"><i class="ti ti-home"></i>Quiero comprar</a>';
+  } else if (tipo === 'venta') {
+    t.textContent = '¿Necesitás ayuda con tu venta?';
+    b.innerHTML = '<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link"><i class="ti ti-coins"></i>Quiero vender</a>';
+  } else {
+    t.textContent = '¿Necesitás ayuda con tu operación?';
+    b.innerHTML = '<a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank" class="cta-link"><i class="ti ti-home"></i>Quiero comprar</a><a href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank" class="cta-link"><i class="ti ti-coins"></i>Quiero vender</a>';
+  }
+}
+
+function mostrarCompra() {
+  document.getElementById('compra-section').style.display = 'block';
+  document.getElementById('venta-section').style.display = 'none';
+  actualizarCTA('compra');
+  document.getElementById('compra-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function mostrarVenta() {
+  document.getElementById('venta-section').style.display = 'block';
+  document.getElementById('compra-section').style.display = 'none';
+  actualizarCTA('venta');
+  document.getElementById('venta-section').scrollIntoView({ behavior: 'smooth' });
 }
 
 /* ── Init ── */
-  actualizarExencion();
+actualizarExencion();
 </script>
 </body>
 </html>
