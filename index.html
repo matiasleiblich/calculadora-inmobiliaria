@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calculadora Inmobiliaria | Gastos Compra y Venta</title>
-<meta name="description" content="Calculá los gastos a la hora de comprar y vender una propiedad en Argentina. CABA y Provincia de Buenos Aires.">
-<link rel="canonical" href="https://matiasleiblich.com/calculadora-inmobiliaria">
+<title>Calculadora de Flipping Inmobiliario | ¿Hasta cuánto podés pagar?</title>
+<meta name="description" content="Calculá hasta cuánto podés pagar por una propiedad para refaccionarla y venderla con la rentabilidad que buscás. Departamentos y PH.">
+<link rel="canonical" href="https://matiasleiblich.com/calculadora-flipping/">
 
 <!-- Open Graph / WhatsApp -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Calculadora Inmobiliaria | Gastos Compra y Venta">
-<meta property="og:description" content="Calculá los gastos a la hora de comprar y vender una propiedad.">
-<meta property="og:image" content="https://matiasleiblich.com/calculadora-inmobiliaria/IMG/preview.jpg">
-<meta property="og:image:secure_url" content="https://matiasleiblich.com/calculadora-inmobiliaria/IMG/preview.jpg">
+<meta property="og:title" content="Calculadora de Flipping Inmobiliario">
+<meta property="og:description" content="¿Hasta cuánto podés pagar para refaccionar, vender y ganar 20%? Calculalo en segundos.">
+<meta property="og:image" content="https://matiasleiblich.com/calculadora-flipping/IMG/preview.jpg">
+<meta property="og:image:secure_url" content="https://matiasleiblich.com/calculadora-flipping/IMG/preview.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Calculadora Inmobiliaria — Matías Leiblich">
-<meta property="og:url" content="https://matiasleiblich.com/calculadora-inmobiliaria">
+<meta property="og:image:alt" content="Calculadora de Flipping — Matías Leiblich">
+<meta property="og:url" content="https://matiasleiblich.com/calculadora-flipping/">
 <meta property="og:site_name" content="Matías Leiblich">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Calculadora Inmobiliaria | Gastos Compra y Venta">
-<meta name="twitter:description" content="Calculá los gastos a la hora de comprar y vender una propiedad.">
-<meta name="twitter:image" content="https://matiasleiblich.com/calculadora-inmobiliaria/IMG/preview.jpg">
-<meta name="twitter:image:alt" content="Calculadora Inmobiliaria — Matías Leiblich">
+<meta name="twitter:title" content="Calculadora de Flipping Inmobiliario">
+<meta name="twitter:description" content="¿Hasta cuánto podés pagar para refaccionar, vender y ganar 20%? Calculalo en segundos.">
+<meta name="twitter:image" content="https://matiasleiblich.com/calculadora-flipping/IMG/preview.jpg">
+<meta name="twitter:image:alt" content="Calculadora de Flipping — Matías Leiblich">
 
 <!-- Google Analytics GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
@@ -58,6 +58,8 @@
   --green-bg:#edf7f1;
   --green-border:#9fd4b6;
   --red:#c0392b;
+  --red-bg:#fdf0f0;
+  --red-border:#f2b8b0;
   --amber:#7d5a00;
   --amber-bg:#fff8e1;
   --amber-border:#f0c040;
@@ -68,7 +70,7 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 
 /* NAVBAR */
 .navbar{background:var(--navy);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06)}
-.navbar-brand{display:flex;align-items:center;text-decoration:none}
+.navbar-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .navbar-logo{height:28px}
 .navbar-links{display:flex;gap:20px;align-items:center}
 .navbar-links a{color:rgba(255,255,255,.55);font-size:12px;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;transition:color .2s}
@@ -82,14 +84,16 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 .hero-left{flex:1;min-width:260px}
 .hero-title{font-family:'DM Sans',sans-serif;font-size:32px;font-weight:300;color:#f0f1f3;line-height:1.1;margin-bottom:6px}
 .hero-title strong{font-weight:700;color:#fff}
-.hero-subtitle{font-size:12px;color:#9ca3af;line-height:1.6;max-width:500px}
+.hero-subtitle{font-size:12px;color:#9ca3af;line-height:1.6;max-width:520px}
 .hero-datos{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-top:4px}
-.dato-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;min-width:200px}
+.dato-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;min-width:180px}
 .dato-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#6b7280;margin-bottom:4px;font-family:'DM Sans',sans-serif}
 .dato-row{display:flex;align-items:baseline;gap:4px}
 .dato-prefix{font-size:14px;color:#6b7280}
-.dato-input{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;background:transparent;border:none;border-bottom:1.5px solid rgba(255,255,255,.25);outline:none;width:120px;padding:0 2px 2px;transition:border-color .2s}
+.dato-input{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;background:transparent;border:none;border-bottom:1.5px solid rgba(255,255,255,.25);outline:none;width:110px;padding:0 2px 2px;transition:border-color .2s}
 .dato-input:focus{border-bottom-color:var(--gold)}
+.dato-static{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff}
+.dato-static span{font-size:13px;font-weight:500;color:var(--gold)}
 .dato-hint{font-size:9px;color:#6b7a8e;margin-top:5px}
 
 /* MAIN */
@@ -98,14 +102,13 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 .sec-title{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text)}
 .sec-desc{font-size:11px;color:var(--text-muted);margin-top:2px}
 
-/* Tabs Comprar / Vender */
 .tabs{display:flex;gap:6px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:4px}
 .tab{display:inline-flex;align-items:center;gap:6px;border:none;background:transparent;border-radius:7px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .15s}
 .tab:hover{color:var(--navy)}
 .tab.active{background:var(--navy);color:#fff}
 .tab i{font-size:15px}
 
-/* Card calculadora */
+/* Card */
 .calc-card{background:var(--surface);border:1.5px solid var(--border);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1fr 1.25fr}
 .form-side{padding:22px 24px;border-right:1px solid var(--border)}
 .result-side{padding:22px 24px;background:#fbfaf7}
@@ -113,55 +116,94 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 .side-title i{font-size:17px;color:var(--navy)}
 
 .field{margin-bottom:16px}
-.field-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;font-family:'DM Sans',sans-serif;font-weight:500}
-.input-monto-wrap{position:relative}
+.field-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.field-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:500}
+.input-wrap{position:relative}
 .input-prefix{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text-muted);font-weight:500;pointer-events:none;font-family:'DM Sans',sans-serif}
+.input-suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text-muted);font-weight:500;pointer-events:none;font-family:'DM Sans',sans-serif}
 .input-monto{width:100%;padding:10px 12px 10px 44px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;color:var(--text);background:var(--bg);outline:none;transition:border-color .2s,background .2s}
+.input-monto.no-prefix{padding-left:12px;padding-right:40px}
+.input-monto.sm{font-size:15px;padding-top:8px;padding-bottom:8px}
 .input-monto:focus{border-color:var(--navy);background:#fff}
 .input-monto::placeholder{color:#c5c3bb;font-weight:400;font-size:14px}
+.input-caption{font-size:10px;color:var(--text-muted);margin-top:5px;line-height:1.5}
+.input-caption strong{color:var(--navy)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.mini-seg{display:flex;gap:2px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:2px}
+.mini-seg button{border:none;background:transparent;border-radius:4px;padding:3px 8px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:var(--text-muted);cursor:pointer}
+.mini-seg button.active{background:var(--navy);color:#fff}
 
 .seg{display:flex;gap:4px}
-.seg-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px 4px;border:1.5px solid var(--border);border-radius:6px;background:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .15s}
+.seg-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:8px 4px;border:1.5px solid var(--border);border-radius:6px;background:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .15s;line-height:1.3}
+.seg-btn small{font-size:9px;font-weight:500;opacity:.8}
 .seg-btn:hover{border-color:var(--navy);color:var(--navy)}
 .seg-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
-.seg-btn i{font-size:14px}
 
-.alerta{margin-top:8px;padding:8px 10px;border-radius:6px;background:var(--amber-bg);border:1px solid var(--amber-border);font-size:10px;color:var(--amber);line-height:1.5}
-.privacy{font-size:10px;color:var(--text-light);margin-top:14px;display:flex;align-items:center;gap:4px}
+.cta-inline{display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:10px;font-weight:600;color:#128c7e;text-decoration:none}
+.cta-inline:hover{text-decoration:underline}
+.cta-inline i{font-size:13px}
 
-/* Resultados */
-.res-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);gap:10px}
-.res-l{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
-.res-ico{width:30px;height:30px;border-radius:8px;background:#eef1f6;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.res-ico i{font-size:15px;color:var(--navy)}
-.res-key{font-size:12px;font-weight:600;color:var(--text);line-height:1.3}
-.res-sub{font-size:10px;color:var(--text-muted);line-height:1.4}
-.res-r{display:flex;align-items:center;gap:4px}
-.res-val{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
-.res-val.green{color:var(--green)}
+.adv-box{border-top:1px dashed var(--border);margin-top:4px;padding-top:16px}
+.adv-title{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.adv-title i{font-size:14px}
+.privacy{font-size:10px;color:var(--text-light);margin-top:10px;display:flex;align-items:center;gap:4px}
 
-.tip-wrap{position:relative}
-.tip-btn{background:none;border:none;cursor:pointer;color:var(--text-light);padding:2px;display:flex;align-items:center}
-.tip-btn i{font-size:14px}
-.tip-btn:hover{color:var(--navy)}
-.tip-box{display:none;position:absolute;right:0;top:calc(100% + 6px);width:260px;background:var(--navy);color:#e5e7eb;font-size:11px;line-height:1.5;padding:10px 12px;border-radius:8px;z-index:20;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.18)}
-.tip-wrap:hover .tip-box,.tip-wrap:focus-within .tip-box{display:block}
-
-.total-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px}
-.total-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--navy)}
-.total-num{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;color:var(--navy)}
-
-.grand{background:var(--navy);border-radius:10px;padding:16px 18px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+/* Resultado principal */
+.grand{background:var(--navy);border-radius:12px;padding:18px 20px;text-align:center}
 .grand-label{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9ca3af;font-family:'DM Sans',sans-serif}
-.grand-sub{font-size:10px;color:#6b7280;margin-top:2px}
-.grand-num{font-family:'DM Sans',sans-serif;font-size:24px;font-weight:700;color:#fff;white-space:nowrap}
-.grand-pesos{font-size:10px;color:var(--gold);text-align:right;margin-top:2px}
+.grand-num{font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#fff;line-height:1.15;margin:4px 0 2px}
+.grand-sub{font-size:11px;color:#9ca3af}
+.grand-m2{font-size:11px;color:var(--gold);margin-top:4px;font-weight:500}
+.grand.bad{background:var(--red-bg);border:1px solid var(--red-border)}
+.grand.bad .grand-label,.grand.bad .grand-sub{color:var(--red)}
+.grand.bad .grand-num{color:var(--red);font-size:20px}
 
-.empty-state{padding:48px 18px;text-align:center;color:var(--text-muted)}
+.rango{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}
+.rango-item{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 6px;text-align:center}
+.rango-item.main{border-color:var(--navy)}
+.rango-pct{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:600}
+.rango-val{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
+.rango-item.main .rango-val{color:var(--navy)}
+
+/* Semáforo */
+.semaforo{border-radius:10px;padding:12px 14px;margin-top:10px;border:1px solid}
+.semaforo.ok{background:var(--green-bg);border-color:var(--green-border);color:var(--green)}
+.semaforo.warn{background:var(--amber-bg);border-color:var(--amber-border);color:var(--amber)}
+.semaforo.bad{background:var(--red-bg);border-color:var(--red-border);color:var(--red)}
+.sem-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sem-title{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700}
+.sem-pct{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;white-space:nowrap}
+.sem-sub{font-size:10px;line-height:1.5;margin-top:3px}
+
+/* Desglose */
+.desglose-title{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:600;margin:16px 0 4px}
+.res-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);gap:10px}
+.res-key{font-size:12px;font-weight:500;color:var(--text-mid);line-height:1.3}
+.res-sub{font-size:10px;color:var(--text-muted);line-height:1.4}
+.res-val{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
+.res-val.neg{color:var(--red)}
+.res-val.green{color:var(--green)}
+.res-row.total{border-bottom:none;border-top:1.5px solid var(--navy);margin-top:2px}
+.res-row.total .res-key{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--navy)}
+.res-row.total .res-val{color:var(--navy);font-size:15px}
+
+.nota-mini{font-size:10px;color:var(--text-muted);margin-top:10px;line-height:1.5}
+
+/* CTA resultado */
+.cta-box{margin-top:14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:14px}
+.cta-box-title{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px}
+.cta-box-desc{font-size:10px;color:var(--text-muted);line-height:1.5;margin-bottom:10px}
+.cta-btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn-wa-solid{flex:1;min-width:150px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border-radius:8px;background:#25d366;color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-wa-solid:hover{background:#1fb959;transform:translateY(-1px)}
+.btn-wa-ghost{flex:1;min-width:150px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border-radius:8px;background:#fff;border:1.5px solid #25d366;color:#128c7e;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-wa-ghost:hover{background:#f0fdf4}
+
+.empty-state{padding:56px 18px;text-align:center;color:var(--text-muted)}
 .empty-state i{font-size:30px;margin-bottom:8px;opacity:.3;display:block}
 .empty-state p{font-size:11px;line-height:1.6}
 
-/* NOTAS */
 .nota{border-radius:8px;padding:12px 16px;font-size:10px;line-height:1.7;margin-top:12px;background:var(--amber-bg);border:0.5px solid var(--amber-border);color:var(--amber)}
 
 /* CONTACTO */
@@ -199,8 +241,7 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 .footer-meta{font-size:10px;color:#4b5a6e;text-align:right}
 
 @media(max-width:768px){
-  .navbar{padding:0 16px}
-  .navbar{gap:12px}
+  .navbar{padding:0 16px;gap:12px}
   .navbar-logo{height:22px}
   .navbar-links{gap:12px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .navbar-links::-webkit-scrollbar{display:none}
@@ -208,14 +249,14 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
   .hero{padding:24px 16px 20px}
   .hero-title{font-size:22px}
   .hero-datos{width:100%}
-  .dato-card{min-width:unset;width:100%}
+  .dato-card{min-width:unset;flex:1}
   .main{padding:16px}
   .tabs{width:100%}
   .tab{flex:1;justify-content:center}
   .calc-card{grid-template-columns:1fr}
   .form-side{border-right:none;border-bottom:1px solid var(--border);padding:18px 16px}
   .result-side{padding:18px 16px}
-  .tip-box{width:220px}
+  .grand-num{font-size:28px}
   .contacto{padding:28px 16px}
   .contacto-inner{grid-template-columns:1fr}
   .contacto-cards{grid-template-columns:1fr}
@@ -234,8 +275,8 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
     <img class="navbar-logo" src="https://matiasleiblich.com/simulador-bna/IMG/logoml.png" alt="Matías Leiblich" onerror="this.style.display='none'">
   </a>
   <div class="navbar-links">
-    <a href="https://matiasleiblich.com/calculadora-inmobiliaria" class="active">Calculadora</a>
-    <a href="https://matiasleiblich.com/calculadora-flipping/">Flipping</a>
+    <a href="https://matiasleiblich.com/calculadora-inmobiliaria/">Calculadora</a>
+    <a href="https://matiasleiblich.com/calculadora-flipping/" class="active">Flipping</a>
     <a href="https://matiasleiblich.com/simulador-bna/">Crédito BNA</a>
     <a href="https://matiasleiblich.com/simulador/">Tasaciones</a>
     <a href="https://matiasleiblich.com/informes/">Informes</a>
@@ -244,13 +285,18 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">Calculadora interactiva · CABA y Provincia de Buenos Aires</div>
+  <div class="hero-eyebrow">Calculadora interactiva · Flipping inmobiliario · Departamentos y PH</div>
   <div class="hero-row">
     <div class="hero-left">
-      <h1 class="hero-title">Calculadora Inmobiliaria<br><strong>Gastos de compra y venta</strong></h1>
-      <div class="hero-subtitle">Conocé cuánto necesitás para comprar o cuánto vas a recibir al vender una propiedad. Sellos, escribanía, escrituración y honorarios, discriminados.</div>
+      <h1 class="hero-title">Calculadora de Flipping<br><strong>¿Hasta cuánto podés pagar?</strong></h1>
+      <div class="hero-subtitle">Ingresá cuánto vale la propiedad refaccionada, su superficie y el tipo de obra. Te decimos el precio máximo de compra para que la operación deje la rentabilidad que buscás.</div>
     </div>
     <div class="hero-datos">
+      <div class="dato-card">
+        <div class="dato-label">Objetivo</div>
+        <div class="dato-static" id="hero-objetivo">20% <span>en 6 meses</span></div>
+        <div class="dato-hint">Modificable en Cálculo avanzado</div>
+      </div>
       <div class="dato-card">
         <div class="dato-label">Dólar oficial BNA (venta)</div>
         <div class="dato-row">
@@ -266,90 +312,125 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
 <div class="main">
   <div class="sec-header">
     <div>
-      <div class="sec-title" id="sec-title">Gastos de compra</div>
-      <div class="sec-desc" id="sec-desc">Ingresá el valor y la ubicación. El cálculo se actualiza al instante.</div>
+      <div class="sec-title" id="sec-title">Cálculo simple</div>
+      <div class="sec-desc" id="sec-desc">Con 4 datos. El resto de los supuestos vienen cargados por defecto.</div>
     </div>
     <div class="tabs" role="tablist">
-      <button class="tab active" id="tab-compra" onclick="setModo('compra')"><i class="ti ti-home"></i> Comprar</button>
-      <button class="tab" id="tab-venta" onclick="setModo('venta')"><i class="ti ti-home-dollar"></i> Vender</button>
+      <button class="tab active" id="tab-simple" onclick="setModo('simple')"><i class="ti ti-bolt"></i> Cálculo simple</button>
+      <button class="tab" id="tab-avanzado" onclick="setModo('avanzado')"><i class="ti ti-adjustments-horizontal"></i> Cálculo avanzado</button>
     </div>
   </div>
 
-  <!-- COMPRA -->
-  <div class="calc-card" id="compra-section">
+  <div class="calc-card">
+    <!-- FORM -->
     <div class="form-side">
-      <div class="side-title"><i class="ti ti-calculator"></i> Datos de la operación</div>
+      <div class="side-title"><i class="ti ti-home-edit"></i> Datos de la propiedad</div>
 
       <div class="field">
-        <div class="field-label">Valor de compra</div>
-        <div class="input-monto-wrap">
+        <div class="field-head">
+          <div class="field-label" id="lbl-venta">Precio de venta refaccionada</div>
+          <div class="mini-seg">
+            <button class="active" id="pm-total" onclick="setPrecioModo('total')">Total</button>
+            <button id="pm-m2" onclick="setPrecioModo('m2')">Por m²</button>
+          </div>
+        </div>
+        <div class="input-wrap">
           <span class="input-prefix">USD</span>
-          <input class="input-monto" type="text" id="inp-valor" placeholder="ej: 150.000" inputmode="numeric" autocomplete="off">
+          <input class="input-monto" type="text" id="inp-venta" placeholder="ej: 140.000" inputmode="numeric" autocomplete="off">
+        </div>
+        <div class="input-caption" id="cap-venta">Cuánto se vendería una vez terminada la obra.</div>
+        <a class="cta-inline" id="cta-tasacion" data-cta="ayuda_precio_venta" href="#" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> ¿No sabés cuánto vale refaccionada? Te ayudo a estimarla</a>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <div class="field-label" style="margin-bottom:6px">Sup. cubierta</div>
+          <div class="input-wrap">
+            <input class="input-monto no-prefix" type="text" id="inp-cub" placeholder="ej: 40" inputmode="numeric" autocomplete="off">
+            <span class="input-suffix">m²</span>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field-label" style="margin-bottom:6px">Sup. descubierta</div>
+          <div class="input-wrap">
+            <input class="input-monto no-prefix" type="text" id="inp-desc" placeholder="ej: 0" inputmode="numeric" autocomplete="off">
+            <span class="input-suffix">m²</span>
+          </div>
         </div>
       </div>
 
       <div class="field">
-        <div class="field-label">Ubicación del inmueble</div>
+        <div class="field-label" style="margin-bottom:6px">Tipo de obra</div>
         <div class="seg">
-          <button class="seg-btn active" id="btn-caba" onclick="setJuris('caba')"><i class="ti ti-building"></i> CABA</button>
-          <button class="seg-btn" id="btn-pba" onclick="setJuris('pba')"><i class="ti ti-map-pin"></i> Provincia</button>
+          <button class="seg-btn" id="obra-lavada" onclick="setObra('lavada')">Lavada de cara<small>pintura, pisos, detalles</small></button>
+          <button class="seg-btn active" id="obra-refaccion" onclick="setObra('refaccion')">Refacción<small>cocina, baño, instalaciones</small></button>
         </div>
       </div>
 
-      <div class="field">
-        <div class="field-label">¿Es tu primera vivienda?</div>
-        <div class="seg">
-          <button class="seg-btn active" id="btn-si" onclick="setPrimera(true)"><i class="ti ti-circle-check"></i> Sí</button>
-          <button class="seg-btn" id="btn-no" onclick="setPrimera(false)"><i class="ti ti-circle-x"></i> No</button>
+      <!-- AVANZADO -->
+      <div class="adv-box" id="adv-box" style="display:none">
+        <div class="adv-title"><i class="ti ti-adjustments-horizontal"></i> Supuestos de la operación</div>
+
+        <div class="row2">
+          <div class="field">
+            <div class="field-label" style="margin-bottom:6px">Costo de obra</div>
+            <div class="input-wrap">
+              <span class="input-prefix">USD</span>
+              <input class="input-monto sm" type="text" id="inp-costo-m2" inputmode="numeric" autocomplete="off" style="padding-right:40px">
+              <span class="input-suffix">/m²</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label" style="margin-bottom:6px">Rentabilidad buscada</div>
+            <div class="input-wrap">
+              <input class="input-monto no-prefix sm" type="text" id="inp-rent" value="20" inputmode="numeric" autocomplete="off">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
         </div>
-        <div class="alerta" id="exencion-info" style="display:none"></div>
+
+        <div class="row2">
+          <div class="field">
+            <div class="field-label" style="margin-bottom:6px">Plazo total</div>
+            <div class="input-wrap">
+              <input class="input-monto no-prefix sm" type="text" id="inp-plazo" value="6" inputmode="numeric" autocomplete="off" style="padding-right:56px">
+              <span class="input-suffix">meses</span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label" style="margin-bottom:6px">Gastos por mes</div>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input class="input-monto sm" type="text" id="inp-gm" value="400.000" inputmode="numeric" autocomplete="off" style="padding-left:28px">
+            </div>
+          </div>
+        </div>
+        <div class="input-caption" style="margin:-8px 0 14px">Gastos por mes: expensas, ABL/ARBA, servicios y seguro mientras dura la operación.</div>
+
+        <div class="field">
+          <div class="field-label" style="margin-bottom:6px">Precio que te piden <span style="text-transform:none;letter-spacing:0">(opcional)</span></div>
+          <div class="input-wrap">
+            <span class="input-prefix">USD</span>
+            <input class="input-monto sm" type="text" id="inp-pedido" placeholder="ej: 75.000" inputmode="numeric" autocomplete="off">
+          </div>
+          <div class="input-caption">Si lo cargás, te mostramos si el flip cierra a ese precio.</div>
+        </div>
       </div>
 
       <p class="privacy"><i class="ti ti-lock"></i> Tus datos no se almacenan</p>
     </div>
 
+    <!-- RESULTADO -->
     <div class="result-side">
       <div class="side-title"><i class="ti ti-currency-dollar"></i> Resultado estimado</div>
       <div id="result-body">
-        <div class="empty-state"><i class="ti ti-home-search"></i><p>Ingresá el valor de compra<br>para ver el desglose de gastos.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VENTA -->
-  <div class="calc-card" id="venta-section" style="display:none">
-    <div class="form-side">
-      <div class="side-title"><i class="ti ti-home-dollar"></i> Datos de la venta</div>
-
-      <div class="field">
-        <div class="field-label">Valor de venta</div>
-        <div class="input-monto-wrap">
-          <span class="input-prefix">USD</span>
-          <input class="input-monto" type="text" id="venta-valor" placeholder="ej: 150.000" inputmode="numeric" autocomplete="off">
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="field-label">Ubicación del inmueble</div>
-        <div class="seg">
-          <button class="seg-btn active" id="v-caba" onclick="setVentaJuris('caba')"><i class="ti ti-building"></i> CABA</button>
-          <button class="seg-btn" id="v-pba" onclick="setVentaJuris('pba')"><i class="ti ti-map-pin"></i> Provincia</button>
-        </div>
-      </div>
-
-      <p class="privacy"><i class="ti ti-lock"></i> Tus datos no se almacenan</p>
-    </div>
-
-    <div class="result-side">
-      <div class="side-title"><i class="ti ti-currency-dollar"></i> Resultado estimado</div>
-      <div id="venta-result">
-        <div class="empty-state"><i class="ti ti-home-dollar"></i><p>Ingresá el valor de venta<br>para ver el neto estimado.</p></div>
+        <div class="empty-state"><i class="ti ti-home-search"></i><p>Completá el precio de venta refaccionada<br>y la superficie cubierta para ver el resultado.</p></div>
       </div>
     </div>
   </div>
 
   <div class="nota">
-    ⚠️ <strong>Los valores son estimativos</strong> y pueden variar según cada operación y la escribanía interviniente. Los montos en pesos se calculan con el dólar indicado arriba.
+    ⚠️ <strong>Cómo calculamos.</strong> Gastos de compra: 10% del precio de compra (escritura, sellos, honorarios). Gastos de venta: 6% del precio de venta. Obra: superficie cubierta más 25% de la descubierta, por el costo por m² del tipo de obra (lavada de cara USD 300/m², refacción USD 600/m²). El precio por m² de venta se calcula sobre la superficie cubierta más 50% de la descubierta. La rentabilidad se mide sobre el total invertido (compra + gastos + obra). Pensado para departamentos y PH. No incluye impuesto a las Ganancias. Valores estimativos.
   </div>
 </div>
 
@@ -365,7 +446,7 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
       </div>
       <div class="contacto-bio">Soy Ingeniero Civil (UBA) y asesor en Real Estate. Mi enfoque combina el análisis técnico de cada inmueble con el estudio de las condiciones actuales del mercado, lo que permite tomar decisiones de compra, venta e inversión fundamentadas en datos reales.</div>
       <div class="contacto-links">
-        <a class="btn-wa" data-cta="footer_whatsapp" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20Inmobiliaria%20y%20quisiera%20consultar." target="_blank" rel="noopener">
+        <a class="btn-wa" data-cta="footer_whatsapp" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20de%20Flipping%20y%20quisiera%20consultar." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Consultar por WhatsApp
         </a>
         <a class="btn-secondary" data-cta="footer_mail" href="mailto:matiasleiblich@deinmobiliarios.com">
@@ -382,20 +463,20 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
         <div class="cc-ico">💰</div>
         <div class="cc-titulo">¿Tenés una propiedad para vender?</div>
         <div class="cc-desc">Te ayudo a definir el precio correcto y a venderla en el menor tiempo posible.</div>
-        <a class="cc-link" data-cta="card_vender" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20Inmobiliaria%20y%20quisiera%20asesoramiento%20para%20vender%20una%20propiedad." target="_blank" rel="noopener">💰 Quiero vender →</a>
+        <a class="cc-link" data-cta="card_vender" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20de%20Flipping%20y%20quisiera%20asesoramiento%20para%20vender%20una%20propiedad." target="_blank" rel="noopener">💰 Quiero vender →</a>
       </div>
       <div class="contacto-card">
         <div class="cc-ico">🏠</div>
         <div class="cc-titulo">¿Querés comprar?</div>
         <div class="cc-desc">Te acompaño en la búsqueda, el análisis técnico de cada propiedad y la negociación.</div>
-        <a class="cc-link" data-cta="card_comprar" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20Inmobiliaria%20y%20quisiera%20asesoramiento%20para%20comprar%20una%20propiedad." target="_blank" rel="noopener">📱 Quiero comprar →</a>
+        <a class="cc-link" data-cta="card_comprar" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Use%20la%20Calculadora%20de%20Flipping%20y%20quisiera%20asesoramiento%20para%20comprar%20una%20propiedad." target="_blank" rel="noopener">📱 Quiero comprar →</a>
       </div>
       <div class="contacto-card alta">
         <div class="cc-ico">📚</div>
         <div class="cc-titulo">Herramientas y recursos gratuitos</div>
-        <div class="cc-desc">Calculadora de flipping, simulador de tasaciones, informes de valor y biblioteca de guías para compradores, vendedores e inversores.</div>
+        <div class="cc-desc">Calculadora de gastos, simulador de tasaciones, informes de valor y biblioteca de guías para compradores, vendedores e inversores.</div>
         <div class="cc-list">
-          <a class="cc-item" data-cta="tool_flipping" href="https://matiasleiblich.com/calculadora-flipping/" target="_blank" rel="noopener"><span>🔨 Calculadora de flipping</span><span>→</span></a>
+          <a class="cc-item" data-cta="tool_calculadora" href="https://matiasleiblich.com/calculadora-inmobiliaria/" target="_blank" rel="noopener"><span>🧮 Calculadora inmobiliaria</span><span>→</span></a>
           <a class="cc-item" data-cta="tool_tasador" href="https://matiasleiblich.com/simulador/" target="_blank" rel="noopener"><span>📊 Simulador de Tasaciones</span><span>→</span></a>
           <a class="cc-item" data-cta="tool_informes" href="https://matiasleiblich.com/informes/" target="_blank" rel="noopener"><span>📈 Informes de Valor</span><span>→</span></a>
           <a class="cc-item" data-cta="tool_biblioteca" href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank" rel="noopener"><span>📖 Biblioteca de guías</span><span>→</span></a>
@@ -410,21 +491,30 @@ h1,h2,h3{font-family:'DM Sans',sans-serif}
     <strong>Matías Leiblich</strong> · Ingeniero Civil · Real Estate
     <a class="footer-tel" data-cta="footer_telefono" href="https://wa.me/5491161737552" target="_blank" rel="noopener">11-6173-7552</a>
   </div>
-  <div class="footer-meta" id="footer-meta">Los valores exhibidos son estimativos.</div>
+  <div class="footer-meta">Los valores exhibidos son estimativos.</div>
 </div>
 
 <script>
-/* ── Estado ── */
-let modo = 'compra';
-let juris = 'caba';
-let primera = true;
-let ventaJuris = 'caba';
+/* ── Supuestos fijos ── */
+const WA = '5491161737552';
 const TC_DEFAULT = 1540;          // respaldo si falla la consulta automática
-const LIMITE = 226100000;         // límite exención primera vivienda CABA (pesos)
+const GASTOS_COMPRA = 0.10;       // 10% del precio de compra
+const GASTOS_VENTA = 0.06;        // 6% del precio de venta
+const COEF_DESC_OBRA = 0.25;      // descubierta para costo de obra
+const COEF_DESC_VENTA = 0.50;     // descubierta para precio/m² de venta
+const COSTOS_OBRA = { lavada: 300, refaccion: 600 };
+const DEF = { rent: 20, plazo: 6, gm: 400000 };
+
+/* ── Estado ── */
+let modo = 'simple';
+let precioModo = 'total';
+let obra = 'refaccion';
+let costoEditado = false;
 
 /* ── Utilidades ── */
+const $ = id => document.getElementById(id);
 function parseNum(id) {
-  const v = document.getElementById(id).value.replace(/\./g, '').replace(/,/g, '.');
+  const v = $(id).value.replace(/\./g, '').replace(/,/g, '.');
   return parseFloat(v) || 0;
 }
 function fmtInput(el) {
@@ -432,19 +522,79 @@ function fmtInput(el) {
   if (raw === '') { el.value = ''; return; }
   el.value = parseInt(raw, 10).toLocaleString('es-AR');
 }
-function fmtUSD(n) { return 'USD\u00A0' + Math.round(n).toLocaleString('es-AR'); }
-function fmtP(n)   { return '$\u00A0' + Math.round(n).toLocaleString('es-AR'); }
+function fmtUSD(n) { return 'USD ' + Math.round(n).toLocaleString('es-AR'); }
+function fmtN(n)   { return Math.round(n).toLocaleString('es-AR'); }
+function fmtPct(x) { return (Math.round(x * 1000) / 10).toLocaleString('es-AR') + '%'; }
 function getTC()   { return parseNum('inp-tc') || TC_DEFAULT; }
+function waLink(msg) { return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`; }
 
-function track(name, params) {
-  try { gtag('event', name, params || {}); } catch (e) {}
+function track(name, params) { try { gtag('event', name, params || {}); } catch (e) {} }
+let _trk = null;
+function trackCalculo(p) { clearTimeout(_trk); _trk = setTimeout(() => track('calculo_flipping', p), 1500); }
+
+/* ── Supuestos según modo ── */
+function supuestos() {
+  if (modo === 'avanzado') {
+    return {
+      costoM2: parseNum('inp-costo-m2') || COSTOS_OBRA[obra],
+      rent: (parseNum('inp-rent') || DEF.rent) / 100,
+      plazo: parseNum('inp-plazo') || DEF.plazo,
+      gm: parseNum('inp-gm'),
+      pedido: parseNum('inp-pedido')
+    };
+  }
+  return { costoM2: COSTOS_OBRA[obra], rent: DEF.rent / 100, plazo: DEF.plazo, gm: DEF.gm, pedido: 0 };
 }
-// Evento de cálculo con debounce (evita uno por tecla)
-let _trkTimer = null;
-function trackCalculo(params) {
-  clearTimeout(_trkTimer);
-  _trkTimer = setTimeout(() => track('calculo_gastos', params), 1500);
+
+/* ── Motor de cálculo (el mismo para simple y avanzado) ── */
+function precioMaximo(ventaNeta, r, obraUSD, tenencia) {
+  return (ventaNeta / (1 + r) - obraUSD - tenencia) / (1 + GASTOS_COMPRA);
 }
+function analizar(ventaNeta, compra, obraUSD, tenencia) {
+  const gc = compra * GASTOS_COMPRA;
+  const inversion = compra + gc + obraUSD + tenencia;
+  const ganancia = ventaNeta - inversion;
+  return { gc, inversion, ganancia, rent: ganancia / inversion };
+}
+
+/* ── Controles ── */
+function setModo(m) {
+  modo = m;
+  const adv = m === 'avanzado';
+  $('tab-simple').className = adv ? 'tab' : 'tab active';
+  $('tab-avanzado').className = adv ? 'tab active' : 'tab';
+  $('adv-box').style.display = adv ? 'block' : 'none';
+  $('sec-title').textContent = adv ? 'Cálculo avanzado' : 'Cálculo simple';
+  $('sec-desc').textContent = adv
+    ? 'Ajustá los supuestos y, si tenés una propiedad en vista, cargá el precio que te piden.'
+    : 'Con 4 datos. El resto de los supuestos vienen cargados por defecto.';
+  track('cambio_pestana', { modo: m });
+  calcular();
+}
+function setPrecioModo(pm) {
+  if (pm === precioModo) return;
+  // Convierte el valor cargado para no perderlo
+  const v = parseNum('inp-venta');
+  const sp = supPonderada();
+  if (v && sp) {
+    const nuevo = pm === 'm2' ? v / sp : v * sp;
+    $('inp-venta').value = fmtN(nuevo);
+  }
+  precioModo = pm;
+  $('pm-total').className = pm === 'total' ? 'active' : '';
+  $('pm-m2').className = pm === 'm2' ? 'active' : '';
+  $('inp-venta').placeholder = pm === 'total' ? 'ej: 140.000' : 'ej: 2.500';
+  calcular();
+}
+function setObra(o) {
+  obra = o;
+  $('obra-lavada').className = o === 'lavada' ? 'seg-btn active' : 'seg-btn';
+  $('obra-refaccion').className = o === 'refaccion' ? 'seg-btn active' : 'seg-btn';
+  if (!costoEditado) $('inp-costo-m2').value = fmtN(COSTOS_OBRA[o]);
+  calcular();
+}
+function supPonderada() { return parseNum('inp-cub') + parseNum('inp-desc') * COEF_DESC_VENTA; }
+function supObra()      { return parseNum('inp-cub') + parseNum('inp-desc') * COEF_DESC_OBRA; }
 
 /* ── Dólar automático (oficial BNA, venta) ── */
 function cargarDolar() {
@@ -452,238 +602,189 @@ function cargarDolar() {
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(d => {
       if (!d || !d.venta) return;
-      const inp = document.getElementById('inp-tc');
-      if (document.activeElement === inp) return; // no pisar si el usuario está editando
-      inp.value = Math.round(d.venta).toLocaleString('es-AR');
+      const inp = $('inp-tc');
+      if (document.activeElement === inp) return;
+      inp.value = fmtN(d.venta);
       const f = d.fechaActualizacion ? new Date(d.fechaActualizacion) : new Date();
-      const fecha = f.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-      document.getElementById('tc-hint').textContent = `Actualizado al ${fecha} · podés editarlo`;
-      recalcular();
+      $('tc-hint').textContent = `Actualizado al ${f.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' })} · podés editarlo`;
+      calcular();
     })
-    .catch(() => { /* queda el valor de respaldo */ });
+    .catch(() => {});
 }
 
-/* ── Modo Comprar / Vender ── */
-function setModo(m) {
-  modo = m;
-  const esCompra = m === 'compra';
-  document.getElementById('compra-section').style.display = esCompra ? 'grid' : 'none';
-  document.getElementById('venta-section').style.display = esCompra ? 'none' : 'grid';
-  document.getElementById('tab-compra').className = esCompra ? 'tab active' : 'tab';
-  document.getElementById('tab-venta').className = esCompra ? 'tab' : 'tab active';
-  document.getElementById('sec-title').textContent = esCompra ? 'Gastos de compra' : 'Neto de venta';
-  document.getElementById('sec-desc').textContent = esCompra
-    ? 'Ingresá el valor y la ubicación. El cálculo se actualiza al instante.'
-    : 'Ingresá el valor de venta y la ubicación. El cálculo se actualiza al instante.';
-  track('cambio_modo', { modo: m });
-}
-
-/* ── Controles ── */
-function setActive(id, on) {
-  document.getElementById(id).className = on ? 'seg-btn active' : 'seg-btn';
-}
-function setJuris(j) {
-  juris = j;
-  setActive('btn-caba', j === 'caba');
-  setActive('btn-pba', j === 'pba');
-  actualizarExencion();
-  calcular();
-}
-function setPrimera(v) {
-  primera = v;
-  setActive('btn-si', v);
-  setActive('btn-no', !v);
-  actualizarExencion();
-  calcular();
-}
-function setVentaJuris(j) {
-  ventaJuris = j;
-  setActive('v-caba', j === 'caba');
-  setActive('v-pba', j === 'pba');
-  calcularVenta();
-}
-
-function actualizarExencion() {
-  const box = document.getElementById('exencion-info');
-  if (juris === 'caba') {
-    const lim = Math.round(LIMITE / getTC());
-    box.textContent = `Límite vigente para exención de primera vivienda en CABA: USD\u00A0${lim.toLocaleString('es-AR')}`;
-    box.style.display = 'block';
-  } else {
-    box.style.display = 'none';
-  }
-}
-
-/* ── Render de filas ── */
-function filaHTML(it) {
-  return `
-    <div class="res-row">
-      <div class="res-l">
-        <div class="res-ico"><i class="ti ${it.icon}"></i></div>
-        <div>
-          <div class="res-key">${it.name}</div>
-          <div class="res-sub">${it.sub}</div>
-        </div>
-      </div>
-      <div class="res-r">
-        <span class="res-val${it.exento ? ' green' : ''}">${it.exento ? 'Exento' : fmtUSD(it.amount)}</span>
-        <div class="tip-wrap">
-          <button class="tip-btn" aria-label="Más info sobre ${it.name}"><i class="ti ti-info-circle"></i></button>
-          <div class="tip-box">${it.desc}</div>
-        </div>
-      </div>
-    </div>`;
-}
-
-/* ── Cálculo COMPRA (misma lógica que la versión anterior) ── */
+/* ── Cálculo y render ── */
 function calcular() {
-  const valor = parseNum('inp-valor');
-  const dolar = getTC();
-  const body = document.getElementById('result-body');
+  const cub = parseNum('inp-cub');
+  const desc = parseNum('inp-desc');
+  const sp = supPonderada();
+  const so = supObra();
+  const entrada = parseNum('inp-venta');
+  const s = supuestos();
 
-  if (!valor || valor <= 0) {
-    body.innerHTML = `<div class="empty-state"><i class="ti ti-home-search"></i><p>Ingresá el valor de compra<br>para ver el desglose de gastos.</p></div>`;
+  // Objetivo en el hero
+  $('hero-objetivo').innerHTML = `${Math.round(s.rent * 100)}% <span>en ${fmtN(s.plazo)} meses</span>`;
+
+  // Precio de venta total y por m²
+  let venta = 0, ventaM2 = 0;
+  if (entrada && sp) {
+    venta = precioModo === 'total' ? entrada : entrada * sp;
+    ventaM2 = venta / sp;
+    $('cap-venta').innerHTML = precioModo === 'total'
+      ? `Equivale a <strong>${fmtUSD(ventaM2)}/m²</strong> (sup. ponderada ${fmtN(sp)} m²).`
+      : `Total: <strong>${fmtUSD(venta)}</strong> (sup. ponderada ${fmtN(sp)} m²).`;
+  } else {
+    $('cap-venta').textContent = precioModo === 'total'
+      ? 'Cuánto se vendería una vez terminada la obra.'
+      : 'Precio por m² una vez terminada la obra.';
+  }
+  actualizarCtaTasacion(cub, desc);
+
+  const body = $('result-body');
+  if (!venta || !cub) {
+    body.innerHTML = `<div class="empty-state"><i class="ti ti-home-search"></i><p>Completá el precio de venta refaccionada<br>y la superficie cubierta para ver el resultado.</p></div>`;
     return;
   }
 
-  let sellos, pct_sellos, sellos_desc, sellos_exento = false;
-  const valPesos = valor * dolar;
+  const tc = getTC();
+  const gastosVenta = venta * GASTOS_VENTA;
+  const ventaNeta = venta - gastosVenta;
+  const obraUSD = so * s.costoM2;
+  const tenencia = (s.gm * s.plazo) / tc;
+  const pMax = precioMaximo(ventaNeta, s.rent, obraUSD, tenencia);
+  const rentPct = Math.round(s.rent * 100);
 
-  if (juris === 'pba') {
-    sellos = valor * 0.02;
-    pct_sellos = '2% · Provincia de Buenos Aires';
-    sellos_desc = 'Impuesto que grava la transferencia de inmuebles en la Provincia de Buenos Aires.';
-  } else {
-    if (primera) {
-      if (valPesos <= LIMITE) {
-        sellos = 0;
-        sellos_exento = true;
-        pct_sellos = 'Exento — primera vivienda';
-        sellos_desc = 'La operación se encuentra por debajo del límite de exención vigente para primera vivienda en CABA.';
-      } else {
-        const excedente = valPesos - LIMITE;
-        sellos = (excedente * 0.0175) / dolar;
-        pct_sellos = '1,75% sobre excedente del límite';
-        sellos_desc = 'Solo tributa la porción del valor que supera el límite de exención de primera vivienda.';
-      }
-    } else {
-      sellos = valor * (valPesos <= LIMITE ? 0.0135 : 0.0175);
-      pct_sellos = valPesos <= LIMITE ? '1,35% · CABA' : '1,75% · CABA';
-      sellos_desc = 'Impuesto de sellos sobre transferencia de inmuebles en la Ciudad Autónoma de Buenos Aires.';
-    }
+  // Caso: no hay precio que cierre
+  if (pMax <= 0) {
+    body.innerHTML = `
+      <div class="grand bad">
+        <div class="grand-label">No cierra</div>
+        <div class="grand-num">Con esta venta y esta obra no hay precio de compra que deje ${rentPct}%</div>
+        <div class="grand-sub">La obra y los gastos se comen todo el margen.</div>
+      </div>
+      ${desgloseHTML(venta, ventaM2, gastosVenta, obraUSD, so, s, tenencia, null)}
+      ${ctaHTML(null)}`;
+    bindCtas(body);
+    trackCalculo({ modo, obra, resultado: 'no_cierra' });
+    return;
   }
 
-  const escribania = Math.max(valor * 0.015, 1000);
-  const escrituracion = valor * 0.02;
-  const pct_com = juris === 'pba' ? 0.03 : 0.04;
-  const comision = valor * pct_com;
-
-  const total = sellos + escribania + escrituracion + comision;
-  const gran_total = valor + total;
-
-  const items = [
-    { icon: 'ti-building-estate', name: 'Impuesto de sellos', sub: pct_sellos, amount: sellos, exento: sellos_exento, desc: sellos_desc },
-    { icon: 'ti-writing', name: 'Honorarios notariales', sub: '1,5% del valor · mínimo USD 1.000', amount: escribania, desc: 'Honorarios del escribano interviniente en la escrituración de la propiedad.' },
-    { icon: 'ti-file-text', name: 'Gastos de escrituración', sub: '2% del valor de compra', amount: escrituracion, desc: 'Incluye certificados, informes registrales, tasas y gastos administrativos.' },
-    { icon: 'ti-users', name: 'Honorarios inmobiliarios', sub: `${pct_com * 100}% del valor de compra`, amount: comision, desc: `Comisión correspondiente a la intervención de la inmobiliaria (${juris === 'pba' ? '3% Provincia' : '4% CABA'}).` }
-  ];
+  const a = analizar(ventaNeta, pMax, obraUSD, tenencia);
+  const rangos = [Math.max(rentPct - 5, 1), rentPct, rentPct + 5];
+  const rangoHTML = rangos.map(r => {
+    const p = precioMaximo(ventaNeta, r / 100, obraUSD, tenencia);
+    return `<div class="rango-item${r === rentPct ? ' main' : ''}">
+      <div class="rango-pct">Para ${r}%</div>
+      <div class="rango-val">${p > 0 ? fmtUSD(p) : '—'}</div>
+    </div>`;
+  }).join('');
 
   body.innerHTML = `
-    <div>${items.map(filaHTML).join('')}</div>
-    <div class="total-row">
-      <span class="total-label">TOTAL DE GASTOS</span>
-      <span class="total-num">${fmtUSD(total)}</span>
-    </div>
     <div class="grand">
-      <div>
-        <div class="grand-label">Monto total necesario</div>
-        <div class="grand-sub">Valor de compra + total de gastos</div>
-      </div>
-      <div>
-        <div class="grand-num">${fmtUSD(gran_total)}</div>
-        <div class="grand-pesos">${fmtP(gran_total * dolar)}</div>
-      </div>
-    </div>`;
+      <div class="grand-label">Podés pagar hasta</div>
+      <div class="grand-num">${fmtUSD(pMax)}</div>
+      <div class="grand-sub">para ganar ${rentPct}% en ${fmtN(s.plazo)} meses</div>
+      <div class="grand-m2">≈ ${fmtUSD(pMax / sp)}/m² de compra</div>
+    </div>
+    <div class="rango">${rangoHTML}</div>
+    ${semaforoHTML(s, ventaNeta, obraUSD, tenencia, pMax)}
+    ${desgloseHTML(venta, ventaM2, gastosVenta, obraUSD, so, s, tenencia, { compra: pMax, ...a })}
+    ${ctaHTML(pMax)}`;
 
-  trackCalculo({ modo: 'compra', jurisdiccion: juris, primera_vivienda: primera ? 'si' : 'no', valor_usd: Math.round(valor) });
+  bindCtas(body);
+  trackCalculo({ modo, obra, precio_modo: precioModo, venta_usd: Math.round(venta), sup_cubierta: cub, precio_max_usd: Math.round(pMax), con_precio_pedido: s.pedido ? 'si' : 'no' });
 }
 
-/* ── Cálculo VENTA (misma lógica que la versión anterior) ── */
-function calcularVenta() {
-  const valor = parseNum('venta-valor');
-  const dolar = getTC();
-  const box = document.getElementById('venta-result');
-
-  if (!valor) {
-    box.innerHTML = `<div class="empty-state"><i class="ti ti-home-dollar"></i><p>Ingresá el valor de venta<br>para ver el neto estimado.</p></div>`;
-    return;
-  }
-
-  const comision = valor * 0.03;
-  const pre = valor * 0.02;
-
-  let sellos = 0;
-  let nota = 'Habitualmente lo abona el comprador.';
-  let tip = 'El impuesto corresponde al 2% del valor de venta. En la Provincia de Buenos Aires el impuesto suele estar a cargo del comprador, aunque las partes pueden pactar una distribución diferente.';
-
-  if (ventaJuris === 'caba') {
-    const pesos = valor * dolar;
-    sellos = valor * (pesos <= LIMITE ? 0.0135 : 0.0175);
-    nota = 'Se considera que el comprador posee otra propiedad en CABA.';
-    tip = 'Se estima la parte correspondiente al vendedor. Si el comprador adquiere su primera vivienda y se encuentra dentro del límite de exención vigente, este importe podría reducirse o resultar exento.';
-  }
-
-  const gastos = comision + pre + sellos;
-  const neto = valor - gastos;
-
-  const items = [
-    { icon: 'ti-building-estate', name: 'Impuesto de sellos', sub: nota, amount: sellos, desc: tip },
-    { icon: 'ti-users', name: 'Honorarios inmobiliarios', sub: '3% del valor de venta', amount: comision, desc: 'Honorarios correspondientes a la intervención de la inmobiliaria. Se estima un 3% del valor de venta.' },
-    { icon: 'ti-file-text', name: 'Gastos preescriturarios', sub: '2% del valor de venta', amount: pre, desc: 'Incluye Estudio de Títulos, Certificados, Diligenciamientos, entre otros.' }
-  ];
-
-  box.innerHTML = `
-    <div>${items.map(filaHTML).join('')}</div>
-    <div class="total-row">
-      <span class="total-label">TOTAL DE GASTOS</span>
-      <span class="total-num">${fmtUSD(gastos)}</span>
-    </div>
-    <div class="grand">
-      <div>
-        <div class="grand-label">Neto estimado a recibir</div>
-        <div class="grand-sub">Valor de venta − gastos estimados</div>
+function semaforoHTML(s, ventaNeta, obraUSD, tenencia, pMax) {
+  if (modo !== 'avanzado' || !s.pedido) return '';
+  const a = analizar(ventaNeta, s.pedido, obraUSD, tenencia);
+  const anual = a.rent * 12 / s.plazo;
+  let cls, titulo;
+  if (a.rent >= 0.20)      { cls = 'ok';   titulo = '✅ El flip cierra'; }
+  else if (a.rent >= 0.10) { cls = 'warn'; titulo = '⚠️ Margen justo'; }
+  else                     { cls = 'bad';  titulo = '🔴 No cierra'; }
+  const dif = s.pedido - pMax;
+  const negociar = dif > 0
+    ? `Para llegar al ${Math.round(s.rent * 100)}% tendrías que negociar unos ${fmtUSD(dif)} menos.`
+    : `Está ${fmtUSD(-dif)} por debajo de tu precio máximo.`;
+  return `
+    <div class="semaforo ${cls}">
+      <div class="sem-head">
+        <div class="sem-title">${titulo}</div>
+        <div class="sem-pct">${fmtPct(a.rent)}</div>
       </div>
-      <div>
-        <div class="grand-num">${fmtUSD(neto)}</div>
-        <div class="grand-pesos">${fmtP(neto * dolar)}</div>
-      </div>
+      <div class="sem-sub">Comprando a ${fmtUSD(s.pedido)}: ganancia de ${fmtUSD(a.ganancia)} en ${fmtN(s.plazo)} meses (${fmtPct(anual)} anual simple). ${negociar}</div>
     </div>`;
-
-  trackCalculo({ modo: 'venta', jurisdiccion: ventaJuris, valor_usd: Math.round(valor) });
 }
 
-function recalcular() {
-  actualizarExencion();
-  calcular();
-  calcularVenta();
+function desgloseHTML(venta, ventaM2, gastosVenta, obraUSD, so, s, tenencia, r) {
+  const fila = (k, sub, v, cls) => `
+    <div class="res-row">
+      <div><div class="res-key">${k}</div>${sub ? `<div class="res-sub">${sub}</div>` : ''}</div>
+      <div class="res-val ${cls || ''}">${v}</div>
+    </div>`;
+  let html = `<div class="desglose-title">Desglose de la operación</div>`;
+  html += fila('Precio de venta', `${fmtUSD(ventaM2)}/m²`, fmtUSD(venta));
+  html += fila('Gastos de venta', '6% del precio de venta', '− ' + fmtUSD(gastosVenta), 'neg');
+  html += fila('Obra', `${fmtN(so)} m² × ${fmtUSD(s.costoM2)}/m²`, '− ' + fmtUSD(obraUSD), 'neg');
+  html += fila('Gastos mensuales', `${fmtN(s.plazo)} meses × $${fmtN(s.gm)}`, '− ' + fmtUSD(tenencia), 'neg');
+  if (r) {
+    html += fila('Precio de compra máximo', '', '− ' + fmtUSD(r.compra), 'neg');
+    html += fila('Gastos de compra', '10% del precio de compra', '− ' + fmtUSD(r.gc), 'neg');
+    html += `<div class="res-row total"><div><div class="res-key">Ganancia estimada</div><div class="res-sub">sobre una inversión total de ${fmtUSD(r.inversion)}</div></div><div class="res-val green">${fmtUSD(r.ganancia)}</div></div>`;
+  }
+  html += `<div class="nota-mini">No incluye impuesto a las Ganancias · Pensado para departamentos y PH.</div>`;
+  return html;
+}
+
+function ctaHTML(pMax) {
+  const cub = parseNum('inp-cub'), desc = parseNum('inp-desc');
+  const venta = precioModo === 'total' ? parseNum('inp-venta') : parseNum('inp-venta') * supPonderada();
+  const sup = desc ? `${fmtN(cub)} m² cubiertos + ${fmtN(desc)} m² descubiertos` : `${fmtN(cub)} m² cubiertos`;
+  const tipo = obra === 'lavada' ? 'lavada de cara' : 'refacción';
+  const resumen = pMax
+    ? `Me da que puedo pagar hasta ${fmtUSD(pMax).replace(' ', ' ')}.`
+    : 'Me da que no cierra.';
+  const msg1 = `Hola Matías. Usé la Calculadora de Flipping: propiedad de ${sup}, venta estimada refaccionada ${fmtUSD(venta).replace(' ', ' ')}, obra tipo ${tipo}. ${resumen} Tengo una propiedad en vista, ¿la analizamos?`;
+  const msg2 = `Hola Matías. Usé la Calculadora de Flipping y me interesa invertir. ¿Me avisás cuando aparezcan oportunidades que cierren?`;
+  return `
+    <div class="cta-box">
+      <div class="cta-box-title">¿Querés analizarlo en serio?</div>
+      <div class="cta-box-desc">Reviso la propiedad, el valor real de venta refaccionada y el costo de obra con criterio de ingeniero.</div>
+      <div class="cta-btns">
+        <a class="btn-wa-solid" data-cta="resultado_propiedad_en_vista" href="${waLink(msg1)}" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Tengo una propiedad en vista</a>
+        <a class="btn-wa-ghost" data-cta="resultado_oportunidades" href="${waLink(msg2)}" target="_blank" rel="noopener"><i class="ti ti-bell"></i> Avisame de oportunidades</a>
+      </div>
+    </div>`;
+}
+
+function actualizarCtaTasacion(cub, desc) {
+  let msg = 'Hola Matías. Estoy usando la Calculadora de Flipping y quisiera ayuda para estimar cuánto valdría una propiedad refaccionada';
+  if (cub) msg += ` (${fmtN(cub)} m² cubiertos${desc ? ' + ' + fmtN(desc) + ' m² descubiertos' : ''})`;
+  msg += '.';
+  $('cta-tasacion').href = waLink(msg);
+}
+
+function bindCtas(root) {
+  root.querySelectorAll('[data-cta]').forEach(a => {
+    a.addEventListener('click', () => track('click_cta', { cta: a.dataset.cta, modo }));
+  });
 }
 
 /* ── Listeners ── */
-document.getElementById('inp-valor').addEventListener('input', function () { fmtInput(this); calcular(); });
-document.getElementById('venta-valor').addEventListener('input', function () { fmtInput(this); calcularVenta(); });
-document.getElementById('inp-tc').addEventListener('input', function () {
+['inp-venta', 'inp-cub', 'inp-desc', 'inp-rent', 'inp-plazo', 'inp-gm', 'inp-pedido'].forEach(id => {
+  $(id).addEventListener('input', function () { fmtInput(this); calcular(); });
+});
+$('inp-costo-m2').addEventListener('input', function () { fmtInput(this); costoEditado = !!this.value; calcular(); });
+$('inp-tc').addEventListener('input', function () {
   fmtInput(this);
-  document.getElementById('tc-hint').textContent = 'Valor ingresado manualmente';
-  recalcular();
+  $('tc-hint').textContent = 'Valor ingresado manualmente';
+  calcular();
 });
-
-// Clicks en CTAs y herramientas → GA4
-document.querySelectorAll('[data-cta]').forEach(a => {
-  a.addEventListener('click', () => track('click_cta', { cta: a.dataset.cta, modo }));
-});
+bindCtas(document);
 
 /* ── Init ── */
-actualizarExencion();
+$('inp-costo-m2').value = fmtN(COSTOS_OBRA[obra]);
+actualizarCtaTasacion(0, 0);
 cargarDolar();
 </script>
 </body>
